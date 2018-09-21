@@ -23,6 +23,11 @@ public class AuthContoller {
          return googleService.getUserByGoogle(token);
     }
 
+    @GetMapping("/hardcode")
+    public User hardCodeLogin(){
+        return userService.get("hegedus.csanad96@gmail.com");
+    }
+
     @GetMapping("")
     public User get(Principal principal) {
         return userService.get(principal.getName());
