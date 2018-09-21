@@ -20,10 +20,16 @@ public class Profile extends AbstractDomain {
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "profile")
     private List<Image> images = new ArrayList<>();
 
-
-
-
     public Profile() {}
+
+    public Profile(User user, Gender gender, Integer age, String targetGender, Integer ageLimitMin, Integer ageLimitMax) {
+        this.user = user;
+        this.gender = gender;
+        this.age = age;
+        this.targetGender = targetGender;
+        this.ageLimitMin = ageLimitMin;
+        this.ageLimitMax = ageLimitMax;
+    }
 
     // Getters
 

@@ -24,6 +24,13 @@ public class User extends AbstractDomain {
 
     public User(){}
 
+    public User(String email, String givenName, String familyName, String imageUrl) {
+        this.email = email;
+        this.givenName = givenName;
+        this.familyName = familyName;
+        this.imageUrl = imageUrl;
+    }
+
     // Getters
 
 

@@ -18,6 +18,12 @@ public class Message extends AbstractDomain{
 
     public Message(){}
 
+    public Message(User sender, User receiver, String message, long timestamp) {
+        this.sender = sender;
+        this.receiver = receiver;
+        this.message = message;
+        this.timestamp = timestamp;
+    }
 
     // Getters
 

@@ -11,7 +11,12 @@ public class Connection extends AbstractDomain{
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    public Connection() {
+    public Connection() {}
+
+    public Connection(Integer userFrom, Integer userTo, Status status) {
+        this.userFrom = userFrom;
+        this.userTo = userTo;
+        this.status = status;
     }
 
     // Getters
