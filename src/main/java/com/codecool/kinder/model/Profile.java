@@ -19,11 +19,8 @@ public class Profile extends AbstractDomain {
     private Integer ageLimitMax;
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "profile")
     private List<Image> images = new ArrayList<>();
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "sender")
-    private List<Message> sentMessages = new ArrayList<>();
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "receiver")
-    private List<Message> receivedMessages = new ArrayList<>();
-    private List<Connection> connections = new ArrayList<>();
+
+
 
 
     public Profile() {}
@@ -58,18 +55,6 @@ public class Profile extends AbstractDomain {
         return images;
     }
 
-    public List<Message> getSentMessages() {
-        return sentMessages;
-    }
-
-    public List<Message> getReceivedMessages() {
-        return receivedMessages;
-    }
-
-    public List<Connection> getConnections() {
-        return connections;
-    }
-
     // Setters
 
 
@@ -101,17 +86,6 @@ public class Profile extends AbstractDomain {
         this.images = images;
     }
 
-    public void setSentMessages(List<Message> sentMessages) {
-        this.sentMessages = sentMessages;
-    }
-
-    public void setReceivedMessages(List<Message> receivedMessages) {
-        this.receivedMessages = receivedMessages;
-    }
-
-    public void setConnections(List<Connection> connections) {
-        this.connections = connections;
-    }
 
     //Methods
 

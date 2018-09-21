@@ -4,10 +4,10 @@ package com.codecool.kinder.model;
 import javax.persistence.*;
 @Entity
 @Table(name = "connections")
-public class Connection {
+public class Connection extends AbstractDomain{
 
-    private User userFrom;
-    private User userTo;
+    private Integer userFrom;
+    private Integer userTo;
     @Enumerated(EnumType.STRING)
     private Status status;
 
@@ -17,11 +17,11 @@ public class Connection {
     // Getters
 
 
-    public User getUserFrom() {
+    public Integer getUserFrom() {
         return userFrom;
     }
 
-    public User getUserTo() {
+    public Integer getUserTo() {
         return userTo;
     }
 
@@ -32,11 +32,11 @@ public class Connection {
     // Setters
 
 
-    public void setUserFrom(User userFrom) {
+    public void setUserFrom(Integer userFrom) {
         this.userFrom = userFrom;
     }
 
-    public void setUserTo(User userTo) {
+    public void setUserTo(Integer userTo) {
         this.userTo = userTo;
     }
 

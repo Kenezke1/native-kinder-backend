@@ -1,18 +1,18 @@
 package com.codecool.kinder.model;
 
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import java.sql.Timestamp;
+import javax.persistence.*;
 import java.util.Date;
 
-public class Message {
+
+@Entity
+@Table(name = "messages")
+public class Message extends AbstractDomain{
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "sender")
-    private Integer sender;
+    private User sender;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "receiver")
-    private Integer receiver;
+    private User receiver;
     private String message;
     private long timestamp = new Date().getTime();
 
@@ -22,11 +22,11 @@ public class Message {
     // Getters
 
 
-    public Integer getSender() {
+    public User getSender() {
         return sender;
     }
 
-    public Integer getReciever() {
+    public User getReciever() {
         return receiver;
     }
 
@@ -40,11 +40,11 @@ public class Message {
 
     //Setters
 
-    public void setSender(Integer sender) {
+    public void setSender(User sender) {
         this.sender = sender;
     }
 
-    public void setReciever(Integer receiver) {
+    public void setReciever(User receiver) {
         this.receiver = receiver;
     }
 
