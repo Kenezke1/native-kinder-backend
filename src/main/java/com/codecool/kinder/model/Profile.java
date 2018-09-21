@@ -11,6 +11,7 @@ import java.util.List;
 public class Profile extends AbstractDomain {
     @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
+    @JsonIgnore
     private User user;
     @Enumerated(EnumType.STRING)
     private Gender gender;
