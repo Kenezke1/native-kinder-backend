@@ -2,11 +2,9 @@ package com.codecool.kinder.model;
 
 
 import com.codecool.kinder.model.AbstractDomain;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,8 +16,10 @@ public class User extends AbstractDomain {
     private String familyName;
     private String imageUrl;
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "sender")
+    @JsonIgnore
     private List<Message> sentMessages = new ArrayList<>();
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "receiver")
+    @JsonIgnore
     private List<Message> receivedMessages = new ArrayList<>();
 
     public User(){}

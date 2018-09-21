@@ -1,5 +1,7 @@
 package com.codecool.kinder.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +12,6 @@ public class Profile extends AbstractDomain {
     @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User user;
-
     @Enumerated(EnumType.STRING)
     private Gender gender;
     private Integer age;

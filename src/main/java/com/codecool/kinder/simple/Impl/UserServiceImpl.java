@@ -40,6 +40,11 @@ public class UserServiceImpl implements UserService,GoogleService{
 
     @Override
     public User add(GoogleIdToken.Payload googlePayload) {
+        return null;
+    }
+
+    @Override
+    public User addGoogleUser(GoogleIdToken.Payload googlePayload) {
         User user = new User();
         user.setEmail(googlePayload.getEmail());
         user.setFamilyName((String)googlePayload.get("family_name"));
@@ -74,6 +79,6 @@ public class UserServiceImpl implements UserService,GoogleService{
         GoogleIdToken.Payload payload = getGooglePayload(token, CLIENT_ID);
         String email = payload.getEmail();
         user = userRepository.findByEmail(email);
-        return user.orElseGet(() -> add(payload));
+        return user.orElseGet(() -> addGoogleUser(payload));
     }
 }
