@@ -39,6 +39,15 @@ public class UserServiceImpl implements UserService,GoogleService{
     }
 
     @Override
+    public User getById(Integer userId) {
+        Optional<User> user = userRepository.findById(userId);
+        if(!user.isPresent()){
+            return user.get();
+        }
+        throw new UserNotFoundException("User with this id is not present!");
+    }
+
+    @Override
     public User add(GoogleIdToken.Payload googlePayload) {
         return null;
     }
