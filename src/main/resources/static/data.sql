@@ -20,8 +20,8 @@ INSERT INTO connections (user_from,user_to,status) VALUES
 (3,2,'TRUE'), --3
 (2,3,'TRUE'); --4
 
-INSERT INTO messages (sender,connection_id,message,time_stamp) VALUES
+INSERT INTO messages (sender,receiver,message,time_stamp) VALUES
 (2,3,'HElÓ',null),
-(3,3,'CSÁ',null);
+(3,2,'CSÁ',null);
 
 

@@ -43,9 +43,8 @@ CREATE TABLE connections (
 	id SERIAL NOT NULL PRIMARY KEY,
 	user_from INTEGER NOT NULL,
 	user_to INTEGER NOT NULL,
-	status TEXT NOT NULL,
-	FOREIGN KEY (user_from) REFERENCES users(id),
-	FOREIGN KEY (user_to) REFERENCES users(id),
+	status TEXT NOT NULL
+
 );
 
 CREATE TABLE messages (
@@ -54,5 +53,7 @@ CREATE TABLE messages (
 	receiver INTEGER NOT NULL,
 	message TEXT NOT NULL,
 	time_stamp TIMESTAMP,
-	CONSTRAINT message_not_empty CHECK (message <> '')
+	CONSTRAINT message_not_empty CHECK (message <> ''),
+	FOREIGN KEY (sender) REFERENCES users(id),
+	FOREIGN KEY (receiver) REFERENCES users(id)
 );
