@@ -16,6 +16,7 @@ public class Profile extends AbstractDomain {
     @Enumerated(EnumType.STRING)
     private Gender gender;
     private Integer age;
+    @Enumerated(EnumType.STRING)
     private Gender targetGender;
     private Integer ageLimitMin;
     private Integer ageLimitMax;
