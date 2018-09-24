@@ -6,5 +6,5 @@ import com.codecool.kinder.model.User;
 
 public interface ProfileService {
 
-    Profile getProfileByUser(User user) throws ProfileNotFound;
+    Profile getProfileByUser(Integer userId) throws ProfileNotFound;
 }

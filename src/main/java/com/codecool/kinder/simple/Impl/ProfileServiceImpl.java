@@ -16,8 +16,8 @@ public class ProfileServiceImpl implements ProfileService{
     @Autowired
     private ProfileRepository profileRepository;
     @Override
-    public Profile getProfileByUser(User user) throws ProfileNotFound {
-        Optional<Profile> profile = profileRepository.findByUserId(user.getId());
+    public Profile getProfileByUser(Integer userId) throws ProfileNotFound {
+        Optional<Profile> profile = profileRepository.findByUserId(userId);
         if(!profile.isPresent()){
             throw new ProfileNotFound("Profile not found");
         }
