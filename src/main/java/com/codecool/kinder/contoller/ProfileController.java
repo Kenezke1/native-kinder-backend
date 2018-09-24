@@ -25,7 +25,6 @@ public class ProfileController {
 
     @GetMapping("")
     Profile getProfileByUserId(@RequestParam("id") Integer userId) throws ProfileNotFound {
-        User user = userService.getById(userId);
-        return profileService.getProfileByUser(user);
+        return profileService.getProfileByUser(userId);
     }
 }

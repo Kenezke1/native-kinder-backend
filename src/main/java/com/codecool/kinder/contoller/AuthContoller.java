@@ -25,13 +25,18 @@ public class AuthContoller {
 
     @GetMapping("/hardcode")
     public User hardCodeLogin(){
-        return userService.get("hegedus.csanad96@gmail.com");
+        return userService.getByEmail("hegedus.csanad96@gmail.com");
     }
 
     @GetMapping("")
-    public User get(Principal principal) {
-        return userService.get(principal.getName());
+    public User getUserById(@RequestParam("id") Integer userId){
+        return userService.getById(userId);
     }
+
+    /*@GetMapping("")
+    public User get(Principal principal) {
+        return userService.getByEmail(principal.getName());
+    }*/
 
     @DeleteMapping("")
     public void delete(HttpSession session) {
