@@ -24,7 +24,8 @@ public class User extends AbstractDomain {
 
     public User(){}
 
-    public User(String email, String givenName, String familyName, String imageUrl) {
+    public User(Integer id,String email, String givenName, String familyName, String imageUrl) {
+        super(id);
         this.email = email;
         this.givenName = givenName;
         this.familyName = familyName;

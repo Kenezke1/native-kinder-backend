@@ -16,7 +16,7 @@ public class Profile extends AbstractDomain {
     @Enumerated(EnumType.STRING)
     private Gender gender;
     private Integer age;
-    private String targetGender;
+    private Gender targetGender;
     private Integer ageLimitMin;
     private Integer ageLimitMax;
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "profile")
@@ -24,8 +24,8 @@ public class Profile extends AbstractDomain {
 
     public Profile() {}
 
-    public Profile(User user, Gender gender, Integer age, String targetGender, Integer ageLimitMin, Integer ageLimitMax) {
-        this.user = user;
+    public Profile(Integer id, Gender gender, Integer age, Gender targetGender, Integer ageLimitMin, Integer ageLimitMax) {
+        super(id);
         this.gender = gender;
         this.age = age;
         this.targetGender = targetGender;
@@ -47,7 +47,7 @@ public class Profile extends AbstractDomain {
         return age;
     }
 
-    public String getTargetGender() {
+    public Gender getTargetGender() {
         return targetGender;
     }
 
@@ -78,7 +78,7 @@ public class Profile extends AbstractDomain {
         this.age = age;
     }
 
-    public void setTargetGender(String targetGender) {
+    public void setTargetGender(Gender targetGender) {
         this.targetGender = targetGender;
     }
 

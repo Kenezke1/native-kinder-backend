@@ -16,8 +16,8 @@ public class Image extends AbstractDomain {
 
     public Image() {}
 
-    public Image(Profile profile, String imageUrl) {
-        this.profile = profile;
+    public Image(Integer id, String imageUrl) {
+        super(id);
         this.imageUrl = imageUrl;
     }
 
