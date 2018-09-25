@@ -70,7 +70,7 @@ public class UserServiceImpl implements UserService,GoogleService{
         try {
             idToken = verifier.verify(googleToken);
         } catch (GeneralSecurityException | IOException e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
         if (idToken != null) {
             return idToken.getPayload();
@@ -83,8 +83,13 @@ public class UserServiceImpl implements UserService,GoogleService{
         Optional<User> user;
         final String CLIENT_ID = "411000030979-hq072pnvtjm7vnr6lipv6bdu0itatklf.apps.googleusercontent.com";
         GoogleIdToken.Payload payload = getGooglePayload(token, CLIENT_ID);
-        String email = payload.getEmail();
-        user = userRepository.findByEmail(email);
-        return user.orElseGet(() -> addGoogleUser(payload));
+        if(payload != null){
+            String email = payload.getEmail();
+            user = userRepository.findByEmail(email);
+            return user.orElseGet(() -> addGoogleUser(payload));
+        }else{
+            throw new NullPointerException("Payload is null");
+        }
+
     }
 }

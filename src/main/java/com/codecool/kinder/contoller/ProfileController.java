@@ -4,7 +4,6 @@ package com.codecool.kinder.contoller;
 import com.codecool.kinder.exceptions.ProfileNotFound;
 import com.codecool.kinder.model.Image;
 import com.codecool.kinder.model.Profile;
-import com.codecool.kinder.model.User;
 import com.codecool.kinder.simple.ImageService;
 import com.codecool.kinder.simple.ProfileService;
 import com.codecool.kinder.simple.UserService;

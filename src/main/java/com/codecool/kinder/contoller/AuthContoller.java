@@ -33,11 +33,6 @@ public class AuthContoller {
         return userService.getById(userId);
     }
 
-    /*@GetMapping("")
-    public User get(Principal principal) {
-        return userService.getByEmail(principal.getName());
-    }*/
-
     @DeleteMapping("")
     public void delete(HttpSession session) {
         session.invalidate();

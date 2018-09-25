@@ -3,7 +3,6 @@ package com.codecool.kinder.simple.Impl;
 import com.codecool.kinder.exceptions.ProfileNotFound;
 import com.codecool.kinder.model.Image;
 import com.codecool.kinder.model.Profile;
-import com.codecool.kinder.model.User;
 import com.codecool.kinder.repository.ImageRepository;
 import com.codecool.kinder.repository.ProfileRepository;
 import com.codecool.kinder.simple.ImageService;
