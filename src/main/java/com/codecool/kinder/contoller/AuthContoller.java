@@ -8,15 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
-import java.security.Principal;
 
 @RestController
 @RequestMapping("/auth")
-public class AuthContoller {
+class AuthContoller {
     @Autowired
-    UserService userService;
+    private UserService userService;
     @Autowired
-    GoogleService googleService;
+    private GoogleService googleService;
 
     @PostMapping("/google")
     public User googleLogin(@RequestParam(name = "token") String token){

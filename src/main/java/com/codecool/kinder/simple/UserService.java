@@ -1,6 +1,5 @@
 package com.codecool.kinder.simple;
 
-import com.codecool.kinder.exceptions.UserNotFoundException;
 import com.codecool.kinder.model.User;
 
 

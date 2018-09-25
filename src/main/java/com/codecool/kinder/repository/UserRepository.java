@@ -1,6 +1,5 @@
 package com.codecool.kinder.repository;
 
-import com.codecool.kinder.exceptions.UserNotFoundException;
 import com.codecool.kinder.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
