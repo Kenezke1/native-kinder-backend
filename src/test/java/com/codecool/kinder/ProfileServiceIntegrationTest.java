@@ -4,7 +4,9 @@ import com.codecool.kinder.exceptions.ProfileNotFound;
 import com.codecool.kinder.model.Gender;
 import com.codecool.kinder.model.Image;
 import com.codecool.kinder.model.Profile;
+import com.codecool.kinder.repository.ImageRepository;
 import com.codecool.kinder.repository.ProfileRepository;
+import com.codecool.kinder.simple.ImageService;
 import com.codecool.kinder.simple.Impl.ProfileServiceImpl;
 import com.codecool.kinder.simple.ProfileService;
 import org.junit.Before;
@@ -17,6 +19,8 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -36,8 +40,14 @@ public class ProfileServiceIntegrationTest {
     @MockBean
     private ProfileRepository profileRepository;
 
+    @MockBean
+    private ImageRepository imageRepository;
+
     @Autowired
     private ProfileService profileService;
+
+    @Autowired
+    private ImageService imageService;
 
     @Before
     public void setUp(){
@@ -45,10 +55,15 @@ public class ProfileServiceIntegrationTest {
         profile.get().getImages().add(new Image(2,"image_url.com/url/csanad"));
 
         Mockito.when(profileRepository.findByUserId(2)).thenReturn(profile);
+
+        Optional<List<Image>> images = Optional.of(new ArrayList<Image>());
+        images.get().add(new Image(2,"image_url.com/url/csanad"));
+
+        Mockito.when(imageRepository.findAllByProfileId(2)).thenReturn(images);
     }
 
     @Test
-    public void whenValidUserId_theProfileShouldBeFound() throws ProfileNotFound {
+    public void whenValidUserId_theProfileShouldBeFound() throws Throwable {
         Integer validUserId = 2;
 
         Profile correctProfile = new Profile(2, Gender.MALE,21,Gender.FEMALE,18,30);
@@ -60,9 +75,22 @@ public class ProfileServiceIntegrationTest {
     }
 
     @Test(expected = ProfileNotFound.class)
-    public void whenInvalidId_thenUserNotFoundExceptionShouldBeFound() throws ProfileNotFound {
+    public void whenInvalidId_thenUserNotFoundExceptionShouldBeFound() throws Throwable {
         Integer invalidUserId = 0;
 
         profileService.getProfileByUser(invalidUserId);
+    }
+
+    @Test
+    public void whenValidProfileId_thenImageListShouldBeFound()throws Throwable{
+        Integer validProfileId = 2;
+
+        List<Image> correctImages = new ArrayList<>();
+        correctImages.add(new Image(2,"image_url.com/url/csanad"));
+
+        List<Image> found = imageService.getImageByProfileId(validProfileId);
+
+        assertThat(found.get(0).getImageUrl()).isEqualTo(correctImages.get(0).getImageUrl());
+
     }
 }
