@@ -1,22 +1,23 @@
 package com.codecool.kinder.exceptions;
 
+
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.NOT_FOUND)
-public class UserNotFoundException extends Exception {
-    public UserNotFoundException(String message) {
+public class ProfileNotFoundException extends Exception {
+    public ProfileNotFoundException(String message) {
         super(message);
     }
 
-    public UserNotFoundException(String message, Throwable cause) {
+    public ProfileNotFoundException(String message, Throwable cause) {
         super(message, cause);
     }
 
-    public UserNotFoundException(Throwable cause) {
+    public ProfileNotFoundException(Throwable cause) {
         super(cause);
     }
 
-    public UserNotFoundException() {
+    public ProfileNotFoundException() {
     }
 }

@@ -46,7 +46,7 @@ public class UserServiceIntegrationTest {
         Mockito.when(userRepository.findById(user.get().getId())).thenReturn(user);
     }
     @Test
-    public void whenValidEmail_thenUserShouldBeFound(){
+    public void whenValidEmail_thenUserShouldBeFound() throws Exception {
         String validEmail = "hegedus.csanad96@gmail.com";
 
         User found = userService.getByEmail(validEmail);
@@ -55,13 +55,13 @@ public class UserServiceIntegrationTest {
     }
 
     @Test(expected = UserNotFoundException.class)
-    public void whenInvalidEmail_thenUserNotFoundExceptionShouldBeFound(){
+    public void whenInvalidEmail_thenUserNotFoundExceptionShouldBeFound() throws Exception {
         String invalidEmail = "imNotValid!";
         userService.getByEmail(invalidEmail);
     }
 
     @Test
-    public void whenValidId_thenUserShouldBeFound(){
+    public void whenValidId_thenUserShouldBeFound() throws Exception {
         Integer validUserId = 2;
 
         User found  = userService.getById(validUserId);
@@ -70,9 +70,8 @@ public class UserServiceIntegrationTest {
     }
 
     @Test(expected = UserNotFoundException.class)
-    public void whenInvalidId_thenUserNotFoundExceptionShouldBeFound(){
+    public void whenInvalidId_thenUserNotFoundExceptionShouldBeFound() throws Exception {
         Integer invalidUserId = 0;
-
         userService.getById(invalidUserId);
     }
 }

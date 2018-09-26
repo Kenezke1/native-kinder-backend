@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService,GoogleService{
     private UserRepository userRepository;
 
     @Override
-    public User getByEmail(String email) {
+    public User getByEmail(String email) throws UserNotFoundException {
        Optional<User> user = userRepository.findByEmail(email);
        if(!user.isPresent()){
            throw new UserNotFoundException("User with this email not exists!");
@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService,GoogleService{
     }
 
     @Override
-    public User getById(Integer userId) {
+    public User getById(Integer userId) throws UserNotFoundException {
         Optional<User> user = userRepository.findById(userId);
         if(user.isPresent()){
             return user.get();

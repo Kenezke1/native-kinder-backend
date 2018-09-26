@@ -4,19 +4,20 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.NOT_FOUND)
-public class UserNotFoundException extends Exception {
-    public UserNotFoundException(String message) {
+public class NoImageFoundException extends Exception {
+
+    public NoImageFoundException(String message) {
         super(message);
     }
 
-    public UserNotFoundException(String message, Throwable cause) {
+    public NoImageFoundException(String message, Throwable cause) {
         super(message, cause);
     }
 
-    public UserNotFoundException(Throwable cause) {
+    public NoImageFoundException(Throwable cause) {
         super(cause);
     }
 
-    public UserNotFoundException() {
+    public NoImageFoundException() {
     }
 }

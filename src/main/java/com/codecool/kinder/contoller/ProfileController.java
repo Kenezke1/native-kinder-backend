@@ -1,7 +1,8 @@
 package com.codecool.kinder.contoller;
 
 
-import com.codecool.kinder.exceptions.ProfileNotFound;
+import com.codecool.kinder.exceptions.NoImageFoundException;
+import com.codecool.kinder.exceptions.ProfileNotFoundException;
 import com.codecool.kinder.model.Image;
 import com.codecool.kinder.model.Profile;
 import com.codecool.kinder.simple.ImageService;
@@ -30,13 +31,13 @@ class ProfileController {
     private UserService userService;
 
     @GetMapping("")
-    Profile getProfileByUserId(@RequestParam("id") Integer userId) throws ProfileNotFound {
+    Profile getProfileByUserId(@RequestParam("id") Integer userId) throws ProfileNotFoundException {
         return profileService.getProfileByUser(userId);
     }
 
 
     @GetMapping("/images")
-    List<Image> getImagesByProfileId(@RequestParam("profileId") Integer profileId) throws ProfileNotFound{
-        return imageService.getImageByProfileId(profileId);
+    List<Image> getImagesByProfileId(@RequestParam("profileId") Integer profileId) throws ProfileNotFoundException, NoImageFoundException {
+        return imageService.getImagesByProfileId(profileId);
     }
 }

@@ -3,15 +3,14 @@ INSERT INTO users (email, given_name, family_name, image_url) VALUES
     ('hegedus.csanad96@gmail.com', 'Csanád', 'Hegedűs', 'https://starschanges.com/wp-content/uploads/2016/04/blake-lively-celebrity-weight-height-and-age.jpg'), --2
     ('herczeg.kenya2@gmail.com', 'Kenéz', 'Herczeg', 'image.com/kenez'); --3
 
-INSERT INTO profiles (user_id,gender,age,target_gender) VALUES
-( 1,'MALE',50,'FEMALE' ), --1
-( 2,'MALE',21,'FEMALE' ), --2
-( 3,'MALE',20,'FEMALE' ); --3
+INSERT INTO profiles (user_id,gender,age,target_gender,age_limit_min,age_limit_max) VALUES
+( 1,'MALE',50,'FEMALE',30,40 ), --1
+( 2,'MALE',21,'FEMALE', 18,22 ), --2
+( 3,'MALE',20,'FEMALE',18,22 ); --3
 
 INSERT INTO images (profile_id,image_url) VALUES
-(1,'image_url.com/url/kinder'), --1
-(2,'image_url.com/url/csanad'), --2
-(3,'image_url.com/url/kenez'); --3
+(2,'image_url.com/url/csanad'), --1
+(3,'image_url.com/url/kenez'); --2
 
 
 INSERT INTO connections (user_from,user_to,status) VALUES
