@@ -2,10 +2,13 @@ package com.codecool.kinder.simple.Impl;
 
 import com.codecool.kinder.exceptions.NoImageFoundException;
 import com.codecool.kinder.exceptions.ProfileNotFoundException;
+import com.codecool.kinder.exceptions.UserNotFoundException;
 import com.codecool.kinder.model.Image;
 import com.codecool.kinder.model.Profile;
+import com.codecool.kinder.model.User;
 import com.codecool.kinder.repository.ImageRepository;
 import com.codecool.kinder.repository.ProfileRepository;
+import com.codecool.kinder.repository.UserRepository;
 import com.codecool.kinder.simple.ImageService;
 import com.codecool.kinder.simple.ProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +24,9 @@ public class ProfileServiceImpl implements ProfileService,ImageService{
     private ProfileRepository profileRepository;
 
     @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
     private ImageRepository imageRepository;
     @Override
     public Profile getProfileByUser(Integer userId) throws ProfileNotFoundException {
@@ -29,6 +35,19 @@ public class ProfileServiceImpl implements ProfileService,ImageService{
             throw new ProfileNotFoundException("Profile not found");
         }
         return profile.get();
+    }
+
+    @Override
+    public Profile add(Profile profile, Integer userId) throws UserNotFoundException {
+        Optional<User> user  = userRepository.findById(userId);
+        if(user.isPresent()){
+            profile.setUser(user.get());
+            return profileRepository.saveAndFlush(profile);
+        }
+        throw new UserNotFoundException("User with this id is not present!");
+
+
+
     }
 
     @Override

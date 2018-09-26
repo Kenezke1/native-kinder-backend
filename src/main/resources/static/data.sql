@@ -1,7 +1,9 @@
 INSERT INTO users (email, given_name, family_name, image_url) VALUES
     ('kinder-native@gmail.com', 'János', 'Kinder', 'image.com/images'), --1
     ('hegedus.csanad96@gmail.com', 'Csanád', 'Hegedűs', 'https://starschanges.com/wp-content/uploads/2016/04/blake-lively-celebrity-weight-height-and-birthDate.jpg'), --2
-    ('herczeg.kenya2@gmail.com', 'Kenéz', 'Herczeg', 'image.com/kenez'); --3
+    ('herczeg.kenya2@gmail.com', 'Kenéz', 'Herczeg', 'image.com/kenez'), --3
+    ('noProfile@gmail.com', 'NO', 'PROFILE', 'image.com/no_proifle'); --4
+
 
 INSERT INTO profiles (user_id,gender,birth_date,target_gender,age_limit_min,age_limit_max) VALUES
 ( 1,'MALE',50,'FEMALE',30,40 ), --1

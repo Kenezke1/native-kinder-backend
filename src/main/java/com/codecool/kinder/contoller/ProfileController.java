@@ -3,16 +3,14 @@ package com.codecool.kinder.contoller;
 
 import com.codecool.kinder.exceptions.NoImageFoundException;
 import com.codecool.kinder.exceptions.ProfileNotFoundException;
+import com.codecool.kinder.exceptions.UserNotFoundException;
 import com.codecool.kinder.model.Image;
 import com.codecool.kinder.model.Profile;
 import com.codecool.kinder.simple.ImageService;
 import com.codecool.kinder.simple.ProfileService;
 import com.codecool.kinder.simple.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -39,5 +37,10 @@ class ProfileController {
     @GetMapping("/images")
     List<Image> getImagesByProfileId(@RequestParam("profileId") Integer profileId) throws ProfileNotFoundException, NoImageFoundException {
         return imageService.getImagesByProfileId(profileId);
+    }
+
+    @PostMapping("")
+    Profile addPorfile(@RequestBody Profile profile, @RequestParam("userId") Integer userId) throws UserNotFoundException {
+        return profileService.add(profile,userId);
     }
 }
