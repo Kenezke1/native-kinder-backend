@@ -9,4 +9,6 @@ public interface UserService {
 
     User getById(Integer userId) throws UserNotFoundException;
 
+    void deleteById(Integer userId) throws UserNotFoundException;
+
 }

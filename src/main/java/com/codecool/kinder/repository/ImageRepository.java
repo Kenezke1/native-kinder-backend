@@ -7,8 +7,8 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ImageRepository extends JpaRepository<Image,Integer>{
-    @Override
-    Optional<Image> findById(Integer integer);
 
-    List<Image> findAllByProfileId(Integer profileId);
+    Optional<Image> findByIdAndEnabledTrue(Integer integer);
+
+    List<Image> findAllByProfileIdAndEnabledTrue(Integer profileId);
 }

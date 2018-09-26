@@ -42,8 +42,8 @@ public class UserServiceIntegrationTest {
     @Before
     public void setUp(){
         Optional<User> user = Optional.of(new User(2,"hegedus.csanad96@gmail.com", "Csanád", "Hegedűs", "https://starschanges.com/wp-content/uploads/2016/04/blake-lively-celebrity-weight-height-and-age.jpg%27"));
-        Mockito.when(userRepository.findByEmail(user.get().getEmail())).thenReturn(user);
-        Mockito.when(userRepository.findById(user.get().getId())).thenReturn(user);
+        Mockito.when(userRepository.findByEmailAndEnabledTrue(user.get().getEmail())).thenReturn(user);
+        Mockito.when(userRepository.findByIdAndEnabledTrue(user.get().getId())).thenReturn(user);
     }
     @Test
     public void whenValidEmail_thenUserShouldBeFound() throws Exception {
