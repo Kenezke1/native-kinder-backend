@@ -52,7 +52,7 @@ public class ProfileServiceIntegrationTest {
 
     @Before
     public void setUp(){
-        Optional<Profile> profile = Optional.of(new Profile(2, Gender.MALE,21,Gender.FEMALE,18,30));
+        Optional<Profile> profile = Optional.of(new Profile(2, Gender.MALE,"1998.07.23",Gender.FEMALE,18,30));
         profile.get().getImages().add(new Image(2,"image_url.com/url/csanad"));
 
         Mockito.when(profileRepository.findByUserId(2)).thenReturn(profile);
@@ -62,7 +62,7 @@ public class ProfileServiceIntegrationTest {
 
         Mockito.when(imageRepository.findAllByProfileId(2)).thenReturn(images);
 
-        Optional<Profile> noImageProfile = Optional.of(new Profile(1,Gender.MALE,50,Gender.FEMALE,30,40));
+        Optional<Profile> noImageProfile = Optional.of(new Profile(1,Gender.MALE,"1996.01.20",Gender.FEMALE,30,40));
 
         Mockito.when(profileRepository.findById(1)).thenReturn(noImageProfile);
 
@@ -73,7 +73,7 @@ public class ProfileServiceIntegrationTest {
     public void whenValidUserId_theProfileShouldBeFound() throws Throwable {
         Integer validUserId = 2;
 
-        Profile correctProfile = new Profile(2, Gender.MALE,21,Gender.FEMALE,18,30);
+        Profile correctProfile = new Profile(2, Gender.MALE,"1998.07.23",Gender.FEMALE,18,30);
         correctProfile.getImages().add(new Image(2,"image_url.com/url/csanad"));
 
         Profile found = profileService.getProfileByUser(validUserId);

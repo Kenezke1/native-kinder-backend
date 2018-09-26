@@ -15,7 +15,7 @@ public class Profile extends AbstractDomain {
     private User user;
     @Enumerated(EnumType.STRING)
     private Gender gender;
-    private Integer age;
+    private String birthDate;
     @Enumerated(EnumType.STRING)
     private Gender targetGender;
     private Integer ageLimitMin;
@@ -25,10 +25,10 @@ public class Profile extends AbstractDomain {
 
     public Profile() {}
 
-    public Profile(Integer id, Gender gender, Integer age, Gender targetGender, Integer ageLimitMin, Integer ageLimitMax) {
+    public Profile(Integer id, Gender gender, String birthDate, Gender targetGender, Integer ageLimitMin, Integer ageLimitMax) {
         super(id);
         this.gender = gender;
-        this.age = age;
+        this.birthDate = birthDate;
         this.targetGender = targetGender;
         this.ageLimitMin = ageLimitMin;
         this.ageLimitMax = ageLimitMax;
@@ -44,8 +44,8 @@ public class Profile extends AbstractDomain {
         return gender;
     }
 
-    public Integer getAge() {
-        return age;
+    public String getBirthDate() {
+        return birthDate;
     }
 
     public Gender getTargetGender() {
@@ -75,8 +75,8 @@ public class Profile extends AbstractDomain {
         this.gender = gender;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setBirthDate(String birthDate) {
+        this.birthDate = birthDate;
     }
 
     public void setTargetGender(Gender targetGender) {
@@ -104,7 +104,7 @@ public class Profile extends AbstractDomain {
         return "Profile{" +
                 "user=" + user +
                 ", gender=" + gender +
-                ", age=" + age +
+                ", birthDate=" + birthDate +
                 ", targetGender='" + targetGender + '\'' +
                 ", ageLimitMin=" + ageLimitMin +
                 ", ageLimitInt=" + ageLimitMax +

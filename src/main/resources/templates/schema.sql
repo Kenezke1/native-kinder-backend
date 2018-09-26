@@ -21,14 +21,14 @@ CREATE TABLE profiles (
 	id SERIAL NOT NULL PRIMARY KEY,
 	user_id INTEGER NOT NULL,
 	gender TEXT NOT NULL,
-	age INTEGER NOT NULL,
+	birth_date TEXT NOT NULL,
 	target_gender TEXT NOT NULL,
 	age_limit_min INTEGER DEFAULT 18,
 	age_limit_max INTEGER DEFAULT 30,
 	enabled BOOLEAN DEFAULT true,
 	FOREIGN KEY (user_id) REFERENCES users(id),
 	CONSTRAINT gender_not_empty CHECK (gender <> ''),
-	CONSTRAINT age_correct CHECK (age > 14 AND age <= 120)
+	CONSTRAINT birth_date_not_empty CHECK (birth_date <> '')
 );
 
 
