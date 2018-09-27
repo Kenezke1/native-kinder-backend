@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService,GoogleService{
 
     @Override
     public User getByEmail(String email) throws UserNotFoundException {
-       Optional<User> user = userRepository.findByEmail(email);
+       Optional<User> user = userRepository.findByEmailAndEnabledTrue(email);
        if(!user.isPresent()){
            throw new UserNotFoundException("User with this email not exists!");
        }
@@ -40,14 +40,24 @@ public class UserServiceImpl implements UserService,GoogleService{
 
     @Override
     public User getById(Integer userId) throws UserNotFoundException {
-        Optional<User> user = userRepository.findById(userId);
+        Optional<User> user = userRepository.findByIdAndEnabledTrue(userId);
         if(user.isPresent()){
             return user.get();
         }
         throw new UserNotFoundException("User with this id is not present!");
     }
 
-
+    @Override
+    public void deleteById(Integer userId) throws UserNotFoundException {
+        Optional<User> deletable = userRepository.findByIdAndEnabledTrue(userId);
+        if(deletable.isPresent()){
+            deletable.get().setEnabled(false);
+            userRepository.saveAndFlush(deletable.get());
+        }
+        else{
+            throw new UserNotFoundException("User with this id is not present!");
+        }
+    }
 
     @Override
     public User addGoogleUser(GoogleIdToken.Payload googlePayload) {
@@ -85,7 +95,7 @@ public class UserServiceImpl implements UserService,GoogleService{
         GoogleIdToken.Payload payload = getGooglePayload(token, CLIENT_ID);
         if(payload != null){
             String email = payload.getEmail();
-            user = userRepository.findByEmail(email);
+            user = userRepository.findByEmailAndEnabledTrue(email);
             return user.orElseGet(() -> addGoogleUser(payload));
         }else{
             throw new NullPointerException("Payload is null");

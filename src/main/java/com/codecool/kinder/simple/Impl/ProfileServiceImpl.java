@@ -1,6 +1,7 @@
 package com.codecool.kinder.simple.Impl;
 
 import com.codecool.kinder.exceptions.NoImageFoundException;
+import com.codecool.kinder.exceptions.ProfileAlreadyExistsException;
 import com.codecool.kinder.exceptions.ProfileNotFoundException;
 import com.codecool.kinder.exceptions.UserNotFoundException;
 import com.codecool.kinder.model.Image;
@@ -38,11 +39,15 @@ public class ProfileServiceImpl implements ProfileService,ImageService{
     }
 
     @Override
-    public Profile add(Profile profile, Integer userId) throws UserNotFoundException {
-        Optional<User> user  = userRepository.findById(userId);
+    public Profile add(Profile profile, Integer userId) throws UserNotFoundException, ProfileAlreadyExistsException {
+        Optional<User> user  = userRepository.findByIdAndEnabledTrue(userId);
+        Optional<Profile> existingProfile = profileRepository.findByUserId(userId);
         if(user.isPresent()){
-            profile.setUser(user.get());
-            return profileRepository.saveAndFlush(profile);
+            if(!existingProfile.isPresent()){
+                profile.setUser(user.get());
+                return profileRepository.saveAndFlush(profile);
+            }
+            throw new ProfileAlreadyExistsException("Profile already exists on this user!");
         }
         throw new UserNotFoundException("User with this id is not present!");
 
@@ -54,7 +59,7 @@ public class ProfileServiceImpl implements ProfileService,ImageService{
     public List<Image> getImagesByProfileId(Integer profileId) throws ProfileNotFoundException, NoImageFoundException {
         Optional<Profile> profile = profileRepository.findById(profileId);
         if(profile.isPresent()){
-            List<Image> images = imageRepository.findAllByProfileId(profileId);
+            List<Image> images = imageRepository.findAllByProfileIdAndEnabledTrue(profileId);
             if(!images.isEmpty()){
                 return images;
             }

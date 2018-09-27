@@ -7,6 +7,7 @@ import com.codecool.kinder.model.Image;
 import com.codecool.kinder.model.Profile;
 import com.codecool.kinder.repository.ImageRepository;
 import com.codecool.kinder.repository.ProfileRepository;
+import com.codecool.kinder.repository.UserRepository;
 import com.codecool.kinder.simple.ImageService;
 import com.codecool.kinder.simple.Impl.ProfileServiceImpl;
 import com.codecool.kinder.simple.ProfileService;
@@ -50,6 +51,9 @@ public class ProfileServiceIntegrationTest {
     @Autowired
     private ImageService imageService;
 
+    @MockBean
+    private UserRepository userRepository;
+
     @Before
     public void setUp(){
         Optional<Profile> profile = Optional.of(new Profile(2, Gender.MALE,"1998.07.23",Gender.FEMALE,18,30));
@@ -57,16 +61,14 @@ public class ProfileServiceIntegrationTest {
 
         Mockito.when(profileRepository.findByUserId(2)).thenReturn(profile);
         Mockito.when(profileRepository.findById(2)).thenReturn(profile);
+
         List<Image> images = new ArrayList<Image>();
         images.add(new Image(2,"image_url.com/url/csanad"));
+        Mockito.when(imageRepository.findAllByProfileIdAndEnabledTrue(2)).thenReturn(images);
 
-        Mockito.when(imageRepository.findAllByProfileId(2)).thenReturn(images);
 
         Optional<Profile> noImageProfile = Optional.of(new Profile(1,Gender.MALE,"1996.01.20",Gender.FEMALE,30,40));
-
         Mockito.when(profileRepository.findById(1)).thenReturn(noImageProfile);
-
-
     }
 
     @Test

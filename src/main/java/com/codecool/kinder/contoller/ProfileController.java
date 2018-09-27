@@ -2,6 +2,7 @@ package com.codecool.kinder.contoller;
 
 
 import com.codecool.kinder.exceptions.NoImageFoundException;
+import com.codecool.kinder.exceptions.ProfileAlreadyExistsException;
 import com.codecool.kinder.exceptions.ProfileNotFoundException;
 import com.codecool.kinder.exceptions.UserNotFoundException;
 import com.codecool.kinder.model.Image;
@@ -40,7 +41,9 @@ class ProfileController {
     }
 
     @PostMapping("")
-    Profile addPorfile(@RequestBody Profile profile, @RequestParam("userId") Integer userId) throws UserNotFoundException {
+    Profile addPorfile(@RequestBody Profile profile, @RequestParam("userId") Integer userId) throws UserNotFoundException, ProfileAlreadyExistsException {
         return profileService.add(profile,userId);
     }
+
+
 }
