@@ -56,7 +56,7 @@ CREATE TABLE messages (
 	sender INTEGER NOT NULL,
 	receiver INTEGER NOT NULL,
 	message TEXT NOT NULL,
-	time_stamp TIMESTAMP,
+	time_stamp TIMESTAMP ,
 	enabled BOOLEAN DEFAULT true,
 	CONSTRAINT message_not_empty CHECK (message <> ''),
 	FOREIGN KEY (sender) REFERENCES users(id),
