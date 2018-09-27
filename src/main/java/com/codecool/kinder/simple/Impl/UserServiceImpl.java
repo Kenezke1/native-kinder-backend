@@ -1,7 +1,12 @@
 package com.codecool.kinder.simple.Impl;
 
+import com.codecool.kinder.exceptions.ProfileNotFoundException;
 import com.codecool.kinder.exceptions.UserNotFoundException;
+import com.codecool.kinder.model.Connection;
+import com.codecool.kinder.model.Profile;
 import com.codecool.kinder.model.User;
+import com.codecool.kinder.repository.ConnectionRepository;
+import com.codecool.kinder.repository.ProfileRepository;
 import com.codecool.kinder.repository.UserRepository;
 import com.codecool.kinder.simple.GoogleService;
 import com.codecool.kinder.simple.UserService;
@@ -19,8 +24,7 @@ import javax.transaction.Transactional;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
-import java.util.Collections;
-import java.util.Optional;
+import java.util.*;
 
 
 @Service
@@ -28,6 +32,12 @@ public class UserServiceImpl implements UserService,GoogleService{
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private ProfileRepository profileRepository;
+
+    @Autowired
+    private ConnectionRepository connectionRepository;
 
     @Override
     public User getByEmail(String email) throws UserNotFoundException {
@@ -101,5 +111,30 @@ public class UserServiceImpl implements UserService,GoogleService{
             throw new NullPointerException("Payload is null");
         }
 
+    }
+
+    @Override
+    public List<User> findUsersNotMatched(Integer userId) throws ProfileNotFoundException {
+        List<User> notMatched = userRepository.findUserNotMatched(userId);
+        List<User> result = new ArrayList<>();
+
+        Optional<Profile> myProfile = profileRepository.findByUserId(userId);
+        notMatched.removeAll(findMatches(userId));
+        for(User user : notMatched){
+            Optional<Profile> profile = profileRepository.findByUserId(user.getId());
+            if(profile.isPresent() && myProfile.get().getTargetGender().equals(profile.get().getGender())){
+                result.add(user);
+            }
+        }
+        return result;
+    }
+
+
+    @Override
+    public List<User> findMatches(Integer userId){
+        List<User> matches = userRepository.findMatches(userId);
+        Optional<User> myself = userRepository.findByIdAndEnabledTrue(userId);
+        matches.remove(myself.get());
+        return matches;
     }
 }

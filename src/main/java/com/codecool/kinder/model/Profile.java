@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name = "profiles")
@@ -109,5 +110,23 @@ public class Profile extends AbstractDomain {
                 ", ageLimitMin=" + ageLimitMin +
                 ", ageLimitInt=" + ageLimitMax +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Profile profile = (Profile) o;
+        return gender == profile.gender &&
+                Objects.equals(birthDate, profile.birthDate) &&
+                targetGender == profile.targetGender &&
+                Objects.equals(ageLimitMin, profile.ageLimitMin) &&
+                Objects.equals(ageLimitMax, profile.ageLimitMax);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(gender, birthDate, targetGender, ageLimitMin, ageLimitMax);
     }
 }

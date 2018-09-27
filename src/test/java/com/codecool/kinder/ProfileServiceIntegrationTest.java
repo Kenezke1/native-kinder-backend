@@ -4,14 +4,14 @@ import com.codecool.kinder.exceptions.NoImageFoundException;
 import com.codecool.kinder.exceptions.ProfileAlreadyExistsException;
 import com.codecool.kinder.exceptions.ProfileNotFoundException;
 import com.codecool.kinder.exceptions.UserNotFoundException;
-import com.codecool.kinder.model.Gender;
-import com.codecool.kinder.model.Image;
-import com.codecool.kinder.model.Profile;
-import com.codecool.kinder.model.User;
+import com.codecool.kinder.model.*;
+import com.codecool.kinder.repository.ConnectionRepository;
 import com.codecool.kinder.repository.ImageRepository;
 import com.codecool.kinder.repository.ProfileRepository;
 import com.codecool.kinder.repository.UserRepository;
+import com.codecool.kinder.simple.ConnectionService;
 import com.codecool.kinder.simple.ImageService;
+import com.codecool.kinder.simple.Impl.ConnectionServiceImpl;
 import com.codecool.kinder.simple.Impl.ProfileServiceImpl;
 import com.codecool.kinder.simple.Impl.UserServiceImpl;
 import com.codecool.kinder.simple.ProfileService;
@@ -47,6 +47,9 @@ public class ProfileServiceIntegrationTest {
 
         @Bean
         public UserService userService(){ return new UserServiceImpl();}
+
+        @Bean
+        public ConnectionService connectionService(){ return new ConnectionServiceImpl();}
     }
 
 
@@ -68,6 +71,12 @@ public class ProfileServiceIntegrationTest {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private ConnectionService connectionService;
+
+    @MockBean
+    private ConnectionRepository connectionRepository;
 
     @Before
     public void setUp() throws ProfileAlreadyExistsException, UserNotFoundException {

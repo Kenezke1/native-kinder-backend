@@ -34,4 +34,11 @@ public class ConnectionServiceImpl implements ConnectionService {
         }
         return finalConnections;
     }
+
+    @Override
+    public List<Connection> findAllMatches(Integer userId) {
+        return connectionRepository.findAllMatch(userId);
+    }
+
+
 }

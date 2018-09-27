@@ -10,4 +10,6 @@ public interface ProfileService {
     Profile getProfileByUser(Integer userId) throws ProfileNotFoundException;
 
     Profile add(Profile profile, Integer userId) throws UserNotFoundException, ProfileAlreadyExistsException;
+
+    void updateProfile(Profile profile, Integer userId);
 }

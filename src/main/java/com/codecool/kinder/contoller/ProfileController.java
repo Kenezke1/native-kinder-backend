@@ -30,7 +30,7 @@ class ProfileController {
     private UserService userService;
 
     @GetMapping("")
-    Profile getProfileByUserId(@RequestParam("id") Integer userId) throws ProfileNotFoundException {
+    Profile getProfileByUserId(@RequestParam("userId") Integer userId) throws ProfileNotFoundException {
         return profileService.getProfileByUser(userId);
     }
 
@@ -43,6 +43,11 @@ class ProfileController {
     @PostMapping("")
     Profile addPorfile(@RequestBody Profile profile, @RequestParam("userId") Integer userId) throws UserNotFoundException, ProfileAlreadyExistsException {
         return profileService.add(profile,userId);
+    }
+
+    @PutMapping("")
+    void UpdateProfile(@RequestBody Profile profile, @RequestParam Integer userId){
+        profileService.updateProfile(profile, userId);
     }
 
 

@@ -29,6 +29,7 @@ public class ProfileServiceImpl implements ProfileService,ImageService{
 
     @Autowired
     private ImageRepository imageRepository;
+
     @Override
     public Profile getProfileByUser(Integer userId) throws ProfileNotFoundException {
         Optional<Profile> profile = profileRepository.findByUserId(userId);
@@ -56,6 +57,12 @@ public class ProfileServiceImpl implements ProfileService,ImageService{
     }
 
     @Override
+    public void updateProfile(Profile profile, Integer userId) {
+        profile.setUser(userRepository.findByIdAndEnabledTrue(userId).get());
+        profileRepository.saveAndFlush(profile);
+    }
+
+    @Override
     public List<Image> getImagesByProfileId(Integer profileId) throws ProfileNotFoundException, NoImageFoundException {
         Optional<Profile> profile = profileRepository.findById(profileId);
         if(profile.isPresent()){
@@ -67,4 +74,6 @@ public class ProfileServiceImpl implements ProfileService,ImageService{
         }
         throw new ProfileNotFoundException("Profile with this id is not present!");
     }
+
+
 }

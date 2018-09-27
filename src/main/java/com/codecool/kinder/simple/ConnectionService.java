@@ -7,4 +7,6 @@ import java.util.List;
 public interface ConnectionService {
 
     List<Connection> findConnections(Integer userId);
+
+    List<Connection> findAllMatches(Integer userId);
 }
