@@ -4,7 +4,7 @@ package com.codecool.kinder.model;
 import javax.persistence.*;
 @Entity
 @Table(name = "connections")
-class Connection extends AbstractDomain{
+public class Connection extends AbstractDomain{
 
     private Integer userFrom;
     private Integer userTo;
