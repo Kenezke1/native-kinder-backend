@@ -3,6 +3,8 @@ package com.codecool.kinder;
 
 import com.codecool.kinder.exceptions.UserNotFoundException;
 import com.codecool.kinder.model.User;
+import com.codecool.kinder.repository.ConnectionRepository;
+import com.codecool.kinder.repository.ProfileRepository;
 import com.codecool.kinder.repository.UserRepository;
 import com.codecool.kinder.simple.Impl.UserServiceImpl;
 import com.codecool.kinder.simple.UserService;
@@ -38,6 +40,12 @@ public class UserServiceIntegrationTest {
 
     @MockBean
     private UserRepository userRepository;
+
+    @MockBean
+    private ProfileRepository profileRepository;
+
+    @MockBean
+    private ConnectionRepository connectionRepository;
 
     @Before
     public void setUp(){
