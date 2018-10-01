@@ -1,23 +1,21 @@
 package com.codecool.kinder.contoller;
 
-import com.codecool.kinder.model.Connection;
+import com.codecool.kinder.model.Status;
 import com.codecool.kinder.simple.ConnectionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
+@RequestMapping("/connetions")
 public class ConnectionController {
 
     @Autowired
     ConnectionService connectionService;
 
-    @GetMapping("/connections")
-    public List<Connection> findConnections(@RequestParam("userId") Integer userId) {
-        return connectionService.findConnections(userId);
+    @PostMapping("/vote")
+    public Boolean makeAVote(@RequestParam("voterId") Integer voterId, @RequestParam("votedId") Integer votedId , @RequestParam("vote") Status status){
+        return connectionService.vote(voterId,votedId,status);
     }
 
 }
