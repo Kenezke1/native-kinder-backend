@@ -126,6 +126,7 @@ public class UserServiceImpl implements UserService,GoogleService{
                 result.add(user);
             }
         }
+        result.removeAll(userRepository.findUsersVotedByMe(userId));
         return result;
     }
 

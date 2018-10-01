@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping("/connetions")
+@RequestMapping("/connections")
 public class ConnectionController {
 
     @Autowired

@@ -6,7 +6,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "messages")
-class Message extends AbstractDomain{
+public class Message extends AbstractDomain{
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "sender")
     private User sender;

@@ -18,7 +18,7 @@ public interface UserRepository extends JpaRepository<User,Integer>{
             "FROM connections as conn1 INNER JOIN connections as conn2 ON\n" +
             "conn1.user_to = conn2.user_from AND conn1.user_from = conn2.user_to \n" +
             "RIGHT JOIN users on conn1.user_from = users.id WHERE conn1.user_from is null OR conn1.user_from != ?1 \n" +
-            "AND conn2.user_from != ?1",nativeQuery = true)
+            "AND conn2.user_to != ?1",nativeQuery = true)
     List<User> findUserNotMatched(Integer userId);
 
 
@@ -31,4 +31,8 @@ public interface UserRepository extends JpaRepository<User,Integer>{
             "WHERE conn1.status = 'RIGHT' AND conn2.status = 'RIGHT' " +
             "AND (conn1.user_from = ?1 OR conn1.user_to = ?1 )",nativeQuery = true)
     List<User> findMatches(Integer userId);
+
+
+    @Query(value = "SELECT * FROM users JOIN connections ON user_to = users.id WHERE user_from = ?1",nativeQuery = true)
+    List<User> findUsersVotedByMe(Integer userId);
 }

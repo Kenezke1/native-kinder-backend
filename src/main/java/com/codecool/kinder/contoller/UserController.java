@@ -3,6 +3,7 @@ package com.codecool.kinder.contoller;
 
 import com.codecool.kinder.exceptions.ProfileNotFoundException;
 import com.codecool.kinder.exceptions.UserNotFoundException;
+import com.codecool.kinder.model.Message;
 import com.codecool.kinder.model.User;
 import com.codecool.kinder.simple.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +23,17 @@ public class UserController {
         return userService.findUsersNotMatched(userId);
     }
 
-    @GetMapping("matches")
+    @GetMapping("/matches")
     public List<User> getMatches(@RequestParam("userId") Integer userId){
         return userService.findMatches(userId);
 
     }
+
+    @GetMapping("/messages")
+    public List<Message> getMessages(@RequestParam("userId") Integer userId) throws UserNotFoundException {
+        return userService.getById(userId).getReceivedMessages();
+    }
+
 
     @DeleteMapping("")
     public void deleteUser(@RequestParam("userId") Integer userId) throws UserNotFoundException{
