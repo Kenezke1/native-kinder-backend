@@ -135,7 +135,7 @@ public class User extends AbstractDomain {
             return this;
         }
 
-        public Builder imageUrl(){
+        public Builder imageUrl(String imageUrl){
             this.imageUrl = imageUrl;
             return this;
         }
