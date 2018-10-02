@@ -26,13 +26,17 @@ public class Profile extends AbstractDomain {
 
     public Profile() {}
 
-    public Profile(Integer id, Gender gender, String birthDate, Gender targetGender, Integer ageLimitMin, Integer ageLimitMax) {
-        super(id);
-        this.gender = gender;
-        this.birthDate = birthDate;
-        this.targetGender = targetGender;
-        this.ageLimitMin = ageLimitMin;
-        this.ageLimitMax = ageLimitMax;
+    public Profile(Builder builder) {
+        super(builder.id);
+        setGender(builder.gender);
+        setBirthDate(builder.birthDate);
+        setTargetGender(builder.targetGender);
+        setAgeLimitMin(builder.ageLimitMin);
+        setAgeLimitMax(builder.ageLimitMax);
+    }
+
+    public Builder builder(){
+        return new Builder();
     }
 
     // Getters
@@ -128,5 +132,51 @@ public class Profile extends AbstractDomain {
     public int hashCode() {
 
         return Objects.hash(gender, birthDate, targetGender, ageLimitMin, ageLimitMax);
+    }
+
+    public final static class Builder{
+        Integer id;
+        private Gender gender;
+        private String birthDate;
+        private Gender targetGender;
+        private Integer ageLimitMin;
+        private Integer ageLimitMax;
+
+        public Builder(){}
+
+        public Builder id(Integer id){
+            this.id = id;
+            return this;
+        }
+
+        public Builder gender(String gender){
+            this.gender = Gender.valueOf(gender);
+            return this;
+        }
+
+        public Builder birthDate(String birthDate){
+            this.birthDate = birthDate;
+            return this;
+        }
+
+        public Builder targetGender(String targetGender){
+            this.targetGender = Gender.valueOf(targetGender);
+            return this;
+        }
+
+        public Builder ageLimitMin(Integer ageLimitMin){
+            this.ageLimitMin = ageLimitMin;
+            return this;
+        }
+
+        public Builder ageLimitMax(Integer ageLimitMax){
+            this.ageLimitMax = ageLimitMax;
+            return this;
+        }
+
+        public Profile build(){
+            return new Profile(this);
+        }
+
     }
 }

@@ -130,7 +130,7 @@ public class User extends AbstractDomain {
             return this;
         }
 
-        public Builder failiName(String familyName){
+        public Builder familyName(String familyName){
             this.familyName = familyName;
             return this;
         }
