@@ -40,7 +40,7 @@ public class UserRepositoryIntegrationTests {
         entityManager.persist(testUser);
         entityManager.flush();
 
-        Optional<User> found = userRepository.findByEmail(testUser.getEmail());
+        Optional<User> found = userRepository.findByEmail("test@gmail.com");
 
         assertThat(found.get().getEmail()).isEqualTo(testUser.getEmail());
     }
