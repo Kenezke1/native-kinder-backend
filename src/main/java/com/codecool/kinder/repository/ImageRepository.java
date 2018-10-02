@@ -10,5 +10,5 @@ public interface ImageRepository extends JpaRepository<Image,Integer>{
 
     Optional<Image> findByIdAndEnabledTrue(Integer integer);
 
-    List<Image> findAllByProfileIdAndEnabledTrue(Integer profileId);
+    List<Image> findAllByProfile(Integer profileId);
 }

@@ -15,7 +15,7 @@ public abstract class AbstractDomain {
     AbstractDomain(){}
 
     AbstractDomain(Integer id){
-        this.id = id;
+
     }
 
     // Getters
