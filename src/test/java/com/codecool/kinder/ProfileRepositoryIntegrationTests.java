@@ -51,7 +51,7 @@ public class ProfileRepositoryIntegrationTests {
     @Test
     public void whenFindByUserId_thenReturnProfile(){
         Profile testProfile = Profile.builder()
-                                        .id(2)
+                                        .id(1)
                                         .gender("FEMALE")
                                         .birthDate("1943")
                                         .targetGender("MALE")
@@ -59,7 +59,7 @@ public class ProfileRepositoryIntegrationTests {
                                         .ageLimitMax(30)
                                     .build();
         User testUser = User.builder()
-                                .id(2)
+                                .id(1)
                                 .email("testuser@gmail.com")
                                 .givenName("User")
                                 .familyName("Test")
@@ -68,11 +68,14 @@ public class ProfileRepositoryIntegrationTests {
         entityManager.persist(testUser);
         entityManager.flush();
         testProfile.setUser(testUser);
+        System.out.println(testUser);
+        System.out.println(testProfile);
 
         entityManager.persist(testProfile);
-            entityManager.flush();
+        entityManager.flush();
+        System.out.println(testProfile);
 
-        Optional<Profile> found = profileRepository.findByUserId(2);
+        Optional<Profile> found = profileRepository.findByUserId(1);
         assertThat(found.get().getId()).isEqualTo(testProfile.getId());
     }
 }
