@@ -12,7 +12,6 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableJpaRepositories(basePackages = "com.codecool.kinder.repository")
-@PropertySource("application.properties")
 @EnableTransactionManagement
 public class H2JpaConfig {
 
