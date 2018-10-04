@@ -41,7 +41,7 @@ public class ProfileServiceImpl implements ProfileService,ImageService{
 
     @Override
     public Profile add(Profile profile, Integer userId) throws UserNotFoundException, ProfileAlreadyExistsException {
-        Optional<User> user  = userRepository.findByIdAndEnabledTrue(userId);
+        Optional<User> user  = userRepository.findById(userId);
         Optional<Profile> existingProfile = profileRepository.findByUserId(userId);
         if(user.isPresent()){
             if(!existingProfile.isPresent()){
@@ -58,7 +58,7 @@ public class ProfileServiceImpl implements ProfileService,ImageService{
 
     @Override
     public void updateProfile(Profile profile, Integer userId) {
-        profile.setUser(userRepository.findByIdAndEnabledTrue(userId).get());
+        profile.setUser(userRepository.findById(userId).get());
         profileRepository.saveAndFlush(profile);
     }
 
@@ -66,7 +66,7 @@ public class ProfileServiceImpl implements ProfileService,ImageService{
     public List<Image> getImagesByProfileId(Integer profileId) throws ProfileNotFoundException, NoImageFoundException {
         Optional<Profile> profile = profileRepository.findById(profileId);
         if(profile.isPresent()){
-            List<Image> images = imageRepository.findAllByProfileIdAndEnabledTrue(profileId);
+            List<Image> images = imageRepository.findAllByProfileId(profileId);
             if(!images.isEmpty()){
                 return images;
             }

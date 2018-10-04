@@ -46,8 +46,13 @@ INSERT INTO connections (user_from,user_to,status) VALUES
     (2, 8, 'RIGHT'), --15
     (8, 2, 'RIGHT'); --16
 
-INSERT INTO messages (sender,receiver,message) VALUES
-    (2,3,'HElÓ'),
-    (3,2,'CSÁ');
+INSERT INTO messages (connection_id,sender,message,time_stamp) VALUES
+    (9,5,'HElÓ',1538642555942),
+    (9,2,'CSÁ',1538642555946),
+    (11,2,'ÖÖÖ Hi!',1538642555901);
+
+
+
+
 
 

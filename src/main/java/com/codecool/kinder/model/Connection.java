@@ -13,10 +13,15 @@ public class Connection extends AbstractDomain{
 
     public Connection() {}
 
-    public Connection(Integer userFrom, Integer userTo, Status status) {
-        this.userFrom = userFrom;
-        this.userTo = userTo;
-        this.status = status;
+    public Connection(Builder builder) {
+        super(builder.id);
+        setUserFrom(builder.userFrom);
+        setUserTo(builder.userTo);
+        setStatus(builder.status);
+    }
+
+    public static Builder builder(){
+        return new Builder();
     }
 
     // Getters
@@ -47,5 +52,38 @@ public class Connection extends AbstractDomain{
 
     public void setStatus(Status status) {
         this.status = status;
+    }
+
+    public final static class Builder{
+        private Integer id;
+        private Integer userFrom;
+        private Integer userTo;
+        private Status status;
+
+        public Builder () {}
+
+        public Builder id(Integer id) {
+            this.id = id;
+            return this;
+        }
+
+        public Builder userFrom(Integer userForm) {
+            this.userFrom = userForm;
+            return this;
+        }
+
+        public Builder userTo(Integer userTo) {
+            this.userTo = userTo;
+            return this;
+        }
+
+        public Builder status(Status status) {
+            this.status = status;
+            return this;
+        }
+
+        public Connection build(){
+            return new Connection(this);
+        }
     }
 }

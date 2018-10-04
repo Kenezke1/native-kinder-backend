@@ -31,7 +31,7 @@ public class UserController {
 
     @GetMapping("/messages")
     public List<Message> getMessages(@RequestParam("userId") Integer userId) throws UserNotFoundException {
-        return userService.getById(userId).getReceivedMessages();
+        return null;
     }
 
 

@@ -2,7 +2,6 @@ package com.codecool.kinder.simple.Impl;
 
 import com.codecool.kinder.exceptions.ProfileNotFoundException;
 import com.codecool.kinder.exceptions.UserNotFoundException;
-import com.codecool.kinder.model.Connection;
 import com.codecool.kinder.model.Profile;
 import com.codecool.kinder.model.User;
 import com.codecool.kinder.repository.ConnectionRepository;
@@ -41,7 +40,7 @@ public class UserServiceImpl implements UserService,GoogleService{
 
     @Override
     public User getByEmail(String email) throws UserNotFoundException {
-       Optional<User> user = userRepository.findByEmailAndEnabledTrue(email);
+       Optional<User> user = userRepository.findByEmail(email);
        if(!user.isPresent()){
            throw new UserNotFoundException("User with this email not exists!");
        }
@@ -50,7 +49,7 @@ public class UserServiceImpl implements UserService,GoogleService{
 
     @Override
     public User getById(Integer userId) throws UserNotFoundException {
-        Optional<User> user = userRepository.findByIdAndEnabledTrue(userId);
+        Optional<User> user = userRepository.findById(userId);
         if(user.isPresent()){
             return user.get();
         }
@@ -59,7 +58,7 @@ public class UserServiceImpl implements UserService,GoogleService{
 
     @Override
     public void deleteById(Integer userId) throws UserNotFoundException {
-        Optional<User> deletable = userRepository.findByIdAndEnabledTrue(userId);
+        Optional<User> deletable = userRepository.findById(userId);
         if(deletable.isPresent()){
             deletable.get().setEnabled(false);
             userRepository.saveAndFlush(deletable.get());
@@ -105,7 +104,7 @@ public class UserServiceImpl implements UserService,GoogleService{
         GoogleIdToken.Payload payload = getGooglePayload(token, CLIENT_ID);
         if(payload != null){
             String email = payload.getEmail();
-            user = userRepository.findByEmailAndEnabledTrue(email);
+            user = userRepository.findByEmail(email);
             return user.orElseGet(() -> addGoogleUser(payload));
         }else{
             throw new NullPointerException("Payload is null");
@@ -134,7 +133,7 @@ public class UserServiceImpl implements UserService,GoogleService{
     @Override
     public List<User> findMatches(Integer userId){
         List<User> matches = userRepository.findMatches(userId);
-        Optional<User> myself = userRepository.findByIdAndEnabledTrue(userId);
+        Optional<User> myself = userRepository.findById(userId);
         matches.remove(myself.get());
         return matches;
     }

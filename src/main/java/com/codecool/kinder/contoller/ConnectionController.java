@@ -1,6 +1,7 @@
 package com.codecool.kinder.contoller;
 
 import com.codecool.kinder.model.Status;
+import com.codecool.kinder.model.Dto.StatusDto;
 import com.codecool.kinder.simple.ConnectionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +15,7 @@ public class ConnectionController {
     ConnectionService connectionService;
 
     @PostMapping("/vote")
-    public Boolean makeAVote(@RequestParam("voterId") Integer voterId, @RequestParam("votedId") Integer votedId , @RequestParam("vote") Status status){
+    public StatusDto makeAVote(@RequestParam("voterId") Integer voterId, @RequestParam("votedId") Integer votedId , @RequestParam("vote") Status status){
         return connectionService.vote(voterId,votedId,status);
     }
 

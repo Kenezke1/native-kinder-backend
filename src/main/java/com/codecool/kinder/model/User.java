@@ -15,21 +15,19 @@ public class User extends AbstractDomain {
     private String givenName;
     private String familyName;
     private String imageUrl;
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "sender")
-    @JsonIgnore
-    private List<Message> sentMessages = new ArrayList<>();
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "receiver")
-    @JsonIgnore
-    private List<Message> receivedMessages = new ArrayList<>();
 
     public User(){}
 
-    public User(Integer id,String email, String givenName, String familyName, String imageUrl) {
-        super(id);
-        this.email = email;
-        this.givenName = givenName;
-        this.familyName = familyName;
-        this.imageUrl = imageUrl;
+    public User(Builder builder) {
+        super(builder.id);
+        setEmail(builder.email);
+        setGivenName(builder.givenName);
+        setFamilyName(builder.familyName);
+        setImageUrl(builder.imageUrl);
+    }
+
+    public static Builder builder(){
+        return new Builder();
     }
 
     // Getters
@@ -51,13 +49,7 @@ public class User extends AbstractDomain {
         return imageUrl;
     }
 
-    public List<Message> getSentMessages() {
-        return sentMessages;
-    }
 
-    public List<Message> getReceivedMessages() {
-        return receivedMessages;
-    }
 
 
 
@@ -80,13 +72,7 @@ public class User extends AbstractDomain {
         this.imageUrl = imageUrl;
     }
 
-    public void setSentMessages(List<Message> sentMessages) {
-        this.sentMessages = sentMessages;
-    }
 
-    public void setReceivedMessages(List<Message> receivedMessages) {
-        this.receivedMessages = receivedMessages;
-    }
 
 
     // Methods
@@ -100,5 +86,45 @@ public class User extends AbstractDomain {
                 ", familyName='" + familyName + '\'' +
                 ", imageUrl='" + imageUrl + '\'' +
                 '}';
+    }
+
+    public final static class Builder{
+        private Integer id;
+        private String email;
+        private String givenName;
+        private String familyName;
+        private String imageUrl;
+
+        public Builder(){}
+
+        public Builder id(Integer id){
+            this.id = id;
+            return this;
+        }
+
+        public Builder email(String email){
+            this.email = email;
+            return this;
+        }
+
+        public Builder givenName(String givenName){
+            this.givenName = givenName;
+            return this;
+        }
+
+        public Builder familyName(String familyName){
+            this.familyName = familyName;
+            return this;
+        }
+
+        public Builder imageUrl(String imageUrl){
+            this.imageUrl = imageUrl;
+            return this;
+        }
+
+
+        public User build(){
+            return new User(this);
+        }
     }
 }
