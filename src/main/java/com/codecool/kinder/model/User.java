@@ -15,12 +15,6 @@ public class User extends AbstractDomain {
     private String givenName;
     private String familyName;
     private String imageUrl;
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "sender")
-    @JsonIgnore
-    private List<Message> sentMessages = new ArrayList<>();
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "receiver")
-    @JsonIgnore
-    private List<Message> receivedMessages = new ArrayList<>();
 
     public User(){}
 
@@ -55,13 +49,7 @@ public class User extends AbstractDomain {
         return imageUrl;
     }
 
-    public List<Message> getSentMessages() {
-        return sentMessages;
-    }
 
-    public List<Message> getReceivedMessages() {
-        return receivedMessages;
-    }
 
 
 
@@ -84,13 +72,7 @@ public class User extends AbstractDomain {
         this.imageUrl = imageUrl;
     }
 
-    public void setSentMessages(List<Message> sentMessages) {
-        this.sentMessages = sentMessages;
-    }
 
-    public void setReceivedMessages(List<Message> receivedMessages) {
-        this.receivedMessages = receivedMessages;
-    }
 
 
     // Methods

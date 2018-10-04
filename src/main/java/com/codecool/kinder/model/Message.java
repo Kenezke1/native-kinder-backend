@@ -10,15 +10,18 @@ public class Message extends AbstractDomain{
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "sender")
     private User sender;
+    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @JoinColumn(name = "connection_id")
     private Connection connection;
     private String message;
-    private long timestamp = new Date().getTime();
+    private long timestamp;
 
     public Message(){}
 
     public Message(Builder builder) {
         super(builder.id);
         setSender(builder.sender);
+        setConnection(builder.connection);
         setMessage(builder.message);
         setTimestamp(builder.timeStamp);
     }
@@ -38,6 +41,10 @@ public class Message extends AbstractDomain{
         return message;
     }
 
+    public Connection getConnection() {
+        return connection;
+    }
+
     public Long getTimestamp() {
         return timestamp;
     }
@@ -52,6 +59,10 @@ public class Message extends AbstractDomain{
         this.message = message;
     }
 
+    public void setConnection(Connection connection) {
+        this.connection = connection;
+    }
+
     public void setTimestamp(long timestamp) {
         this.timestamp = timestamp;
     }
@@ -59,6 +70,7 @@ public class Message extends AbstractDomain{
     public static final class Builder{
         private Integer id;
         private User sender;
+        private Connection connection;
         private String message;
         private Long timeStamp;
 
@@ -71,6 +83,11 @@ public class Message extends AbstractDomain{
 
         public Builder sender(User sender) {
             this.sender = sender;
+            return this;
+        }
+
+        public Builder connection(Connection connection){
+            this.connection = connection;
             return this;
         }
 

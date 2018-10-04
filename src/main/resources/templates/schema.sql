@@ -54,11 +54,12 @@ CREATE TABLE connections (
 CREATE TABLE messages (
 	id SERIAL NOT NULL PRIMARY KEY,
 	sender INTEGER NOT NULL,
-	receiver INTEGER NOT NULL,
+	connection_id INTEGER NOT NULL,
 	message TEXT NOT NULL,
-	time_stamp TIMESTAMP ,
+	time_stamp BIGINT NOT NULL ,
 	enabled BOOLEAN DEFAULT true,
 	CONSTRAINT message_not_empty CHECK (message <> ''),
 	FOREIGN KEY (sender) REFERENCES users(id),
-	FOREIGN KEY (receiver) REFERENCES users(id)
+	FOREIGN KEY (connection_id) REFERENCES connections(id)
+
 );
