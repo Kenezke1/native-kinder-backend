@@ -317,7 +317,7 @@ INSERT INTO images (profile_id,image_url) VALUES
     (64, 'https://picsum.photos/300/500/?image=639'), --168
     (65, 'https://picsum.photos/300/500/?image=942'), --169
     (65, 'https://picsum.photos/300/500/?image=1058'), --170
-    (65, 'https://picsum.photos/300/500/?image=233'), --171
+    (65, 'https://picsum.photos/300/500/?image=233'); --171
 
 
 INSERT INTO connections (user_from,user_to,status) VALUES
