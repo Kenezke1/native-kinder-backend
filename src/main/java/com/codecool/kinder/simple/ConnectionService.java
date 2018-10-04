@@ -9,9 +9,6 @@ import java.util.List;
 
 public interface ConnectionService {
 
-
-    List<Connection> findAllMatches(Integer userId);
-
     StatusDto vote(Integer voterId, Integer votedId, Status status);
 
 
