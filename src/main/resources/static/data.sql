@@ -676,10 +676,3 @@ INSERT INTO messages (connection_id,sender,message,time_stamp) VALUES
     (75, 67, 'He turned in the research paper on Friday; otherwise, he would have not passed the class.', 1538642556079), --272
     (75, 2, 'The lake is a long way from here.', 1538642556221), --273
     (76, 2, 'Everyone was busy, so I went to the movie alone.', 1538642556177); --274
-
-
-
-
-
-
-
