@@ -66,7 +66,7 @@ public class ProfileServiceImpl implements ProfileService,ImageService{
     public List<Image> getImagesByProfileId(Integer profileId) throws ProfileNotFoundException, NoImageFoundException {
         Optional<Profile> profile = profileRepository.findById(profileId);
         if(profile.isPresent()){
-            List<Image> images = imageRepository.findAllByProfile(profileId);
+            List<Image> images = imageRepository.findAllByProfileId(profileId);
             if(!images.isEmpty()){
                 return images;
             }
