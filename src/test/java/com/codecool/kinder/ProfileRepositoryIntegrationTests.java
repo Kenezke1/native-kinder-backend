@@ -8,6 +8,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
@@ -18,11 +19,9 @@ import java.util.Optional;
 import static org.assertj.core.api.Java6Assertions.assertThat;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {H2JpaConfig.class,KinderApplication.class},
-        loader = AnnotationConfigContextLoader.class)
-
 @Transactional
 @DataJpaTest
+@SpringBootTest(classes = KinderApplication.class)
 public class ProfileRepositoryIntegrationTests {
 
     @Autowired
@@ -68,12 +67,9 @@ public class ProfileRepositoryIntegrationTests {
         entityManager.persist(testUser);
         entityManager.flush();
         testProfile.setUser(testUser);
-        System.out.println(testUser);
-        System.out.println(testProfile);
 
         entityManager.persist(testProfile);
         entityManager.flush();
-        System.out.println(testProfile);
 
         Optional<Profile> found = profileRepository.findByUserId(1);
         assertThat(found.get().getId()).isEqualTo(testProfile.getId());
