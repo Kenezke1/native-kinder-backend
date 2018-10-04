@@ -12,7 +12,7 @@ public class Message extends AbstractDomain {
     @JoinColumn(name = "connection_id")
     private Connection connection;
     private String message;
-    private long timestamp;
+    private Long timestamp;
 
     public Message() {
     }
