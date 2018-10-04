@@ -12,7 +12,8 @@ public class Message extends AbstractDomain {
     @JoinColumn(name = "connection_id")
     private Connection connection;
     private String message;
-    private Long timeStamp;
+    @Column(name = "time_stamp")
+    private Long timestamp;
 
     public Message() {
     }
@@ -45,7 +46,7 @@ public class Message extends AbstractDomain {
     }
 
     public Long getTimestamp() {
-        return timeStamp;
+        return timestamp;
     }
 
     //Setters
@@ -63,7 +64,7 @@ public class Message extends AbstractDomain {
     }
 
     public void setTimestamp(long timestamp) {
-        this.timeStamp = timestamp;
+        this.timestamp = timestamp;
     }
 
     public static final class Builder {

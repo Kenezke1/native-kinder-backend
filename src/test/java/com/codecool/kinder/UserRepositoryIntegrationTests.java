@@ -45,7 +45,7 @@ public class UserRepositoryIntegrationTests {
         assertThat(found.get().getEmail()).isEqualTo(testUser.getEmail());
     }
 
-    /*@Test
+    @Test
     public void whenFindById_thenReturnUser(){
         User testUser = User.builder()
                     .id(1)
@@ -59,6 +59,6 @@ public class UserRepositoryIntegrationTests {
 
         Optional<User> found = userRepository.findById(1);
         assertThat(found.get().getId()).isEqualTo(testUser.getId());
-    }*/
+    }
 
 }
