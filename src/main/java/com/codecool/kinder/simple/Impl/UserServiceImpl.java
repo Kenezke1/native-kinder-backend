@@ -60,7 +60,6 @@ public class UserServiceImpl implements UserService,GoogleService{
     public void deleteById(Integer userId) throws UserNotFoundException {
         Optional<User> deletable = userRepository.findById(userId);
         if(deletable.isPresent()){
-            deletable.get().setEnabled(false);
             userRepository.saveAndFlush(deletable.get());
         }
         else{

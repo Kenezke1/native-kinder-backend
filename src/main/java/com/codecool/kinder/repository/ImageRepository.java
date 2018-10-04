@@ -10,7 +10,7 @@ import java.util.Optional;
 @Repository
 public interface ImageRepository extends JpaRepository<Image,Integer>{
 
-    Optional<Image> findByIdAndEnabledTrue(Integer integer);
+    Optional<Image> findById(Integer integer);
 
     List<Image> findAllByProfileId(Integer profileId);
 }

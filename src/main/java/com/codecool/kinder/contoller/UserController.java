@@ -3,8 +3,11 @@ package com.codecool.kinder.contoller;
 
 import com.codecool.kinder.exceptions.ProfileNotFoundException;
 import com.codecool.kinder.exceptions.UserNotFoundException;
+import com.codecool.kinder.model.Dto.MessageDto;
 import com.codecool.kinder.model.Message;
 import com.codecool.kinder.model.User;
+import com.codecool.kinder.repository.MessageRepository;
+import com.codecool.kinder.simple.MessageService;
 import com.codecool.kinder.simple.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +21,9 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private MessageService messageService;
+
     @GetMapping("/not-matched")
     public List<User> getNotMatchedUsers(@RequestParam("userId") Integer userId) throws ProfileNotFoundException {
         return userService.findUsersNotMatched(userId);
@@ -30,8 +36,8 @@ public class UserController {
     }
 
     @GetMapping("/messages")
-    public List<Message> getMessages(@RequestParam("userId") Integer userId) throws UserNotFoundException {
-        return null;
+    public List<MessageDto> getMessages(@RequestParam("userId") Integer userId) throws UserNotFoundException {
+        return messageService.findAllMessageByUserId(userId);
     }
 
 
