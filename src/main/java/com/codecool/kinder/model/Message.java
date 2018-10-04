@@ -1,22 +1,21 @@
 package com.codecool.kinder.model;
 
 import javax.persistence.*;
-import java.util.Date;
-
 
 @Entity
 @Table(name = "messages")
-public class Message extends AbstractDomain{
+public class Message extends AbstractDomain {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "sender")
     private User sender;
-    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "connection_id")
     private Connection connection;
     private String message;
     private long timestamp;
 
-    public Message(){}
+    public Message() {
+    }
 
     public Message(Builder builder) {
         super(builder.id);
@@ -26,7 +25,7 @@ public class Message extends AbstractDomain{
         setTimestamp(builder.timeStamp);
     }
 
-    public static Builder builder(){
+    public static Builder builder() {
         return new Builder();
     }
 
@@ -67,14 +66,15 @@ public class Message extends AbstractDomain{
         this.timestamp = timestamp;
     }
 
-    public static final class Builder{
+    public static final class Builder {
         private Integer id;
         private User sender;
         private Connection connection;
         private String message;
         private Long timeStamp;
 
-        public Builder() {}
+        public Builder() {
+        }
 
         public Builder id(Integer id) {
             this.id = id;
@@ -86,7 +86,7 @@ public class Message extends AbstractDomain{
             return this;
         }
 
-        public Builder connection(Connection connection){
+        public Builder connection(Connection connection) {
             this.connection = connection;
             return this;
         }
@@ -101,7 +101,7 @@ public class Message extends AbstractDomain{
             return this;
         }
 
-        public Message build(){
+        public Message build() {
             return new Message(this);
         }
     }
