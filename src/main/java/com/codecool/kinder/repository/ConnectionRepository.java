@@ -23,6 +23,6 @@ public interface ConnectionRepository extends JpaRepository<Connection, Integer>
             "conn1.user_to = conn2.user_from AND conn1.user_from = conn2.user_to " +
             "JOIN users on conn1.user_from = users.id " +
             "WHERE conn1.status = 'RIGHT' AND conn2.status = 'RIGHT' " +
-            "AND (conn1.user_from = ?1 OR conn2.user_to = ?1);",nativeQuery = true)
+            "AND (conn1.user_from = ?1 OR conn1.user_to = ?1);",nativeQuery = true)
     List<Connection> findMyConnections(Integer userId);
 }

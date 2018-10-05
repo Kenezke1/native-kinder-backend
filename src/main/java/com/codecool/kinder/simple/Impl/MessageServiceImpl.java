@@ -33,7 +33,6 @@ public class MessageServiceImpl implements MessageService{
             for (int j = 0; j < connections.size(); j++) {
                 if(connections.get(j).getUserTo().equals(users.get(i).getId()) || connections.get(j).getUserFrom().equals(users.get(i).getId())){
                     messageDtos.add(new MessageDto(users.get(i),messageRepository.findAllByConnectionId(connections.get(j).getId())));
-
                 }
             }
         }
