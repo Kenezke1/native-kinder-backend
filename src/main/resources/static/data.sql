@@ -402,284 +402,277 @@ INSERT INTO connections (user_from,user_to,status) VALUES
     (71, 2, 'LEFT'); --79
 
 INSERT INTO messages (connection_id,sender,message,time_stamp) VALUES
-    (9,5,'HElÓ',1538642555942), --1
-    (9,2,'CSÁ',1538642555946), --2
-    (11,2,'ÖÖÖ Hi!',1538642555901), --3
+    (9, 5, 'HElÓ', 1538642555942), --1
+    (9, 2, 'CSÁ', 1538642555946), --2
+    (11, 2, 'ÖÖÖ Hi!', 1538642555901), --3
     (17, 2, 'I think I will buy the red car, or I will lease the blue one.', 1538642556374), --4
-    (17, 2, 'The stranger officiates the meal.', 1538642556096), --5
+    (17, 9, 'The stranger officiates the meal.', 1538642556096), --5
     (17, 2, 'If I don’t like something, I’ll stay away from it.', 1538642556186), --6
     (18, 2, 'I really want to go to work, but I am too sick to drive.', 1538642556374), --7
-    (18, 2, 'I hear that Nancy is very pretty.', 1538642556270), --8
+    (18, 10, 'I hear that Nancy is very pretty.', 1538642556270), --8
     (18, 2, 'She only paints with bold colors; she does not like pastels.', 1538642556472), --9
-    (18, 2, 'He didn’t want to go to the dentist, yet he went anyway.', 1538642555950), --10
+    (18, 10, 'He didn’t want to go to the dentist, yet he went anyway.', 1538642555950), --10
     (18, 2, 'Abstraction is often one floor above you.', 1538642556067), --11
-    (18, 2, 'This is the last random sentence I will be writing and I am going to stop mid-sent', 1538642556445), --12
+    (18, 10, 'This is the last random sentence I will be writing and I am going to stop mid-sent', 1538642556445), --12
     (19, 2, 'Rock music approaches at high velocity.', 1538642556405), --13
-    (19, 2, 'There were white out conditions in the town; subsequently, the roads were impassable.', 1538642556143), --14
+    (19, 11, 'There were white out conditions in the town; subsequently, the roads were impassable.', 1538642556143), --14
     (19, 2, 'Everyone was busy, so I went to the movie alone.', 1538642556416), --15
-    (19, 2, 'I want more detailed information.', 1538642556348), --16
+    (19, 11, 'I want more detailed information.', 1538642556348), --16
     (19, 2, 'If the Easter Bunny and the Tooth Fairy had babies would they take your teeth and leave chocolate for you?', 1538642556313), --17
-    (19, 2, 'I often see the time 11:11 or 12:34 on clocks.', 1538642556121), --18
+    (19, 11, 'I often see the time 11:11 or 12:34 on clocks.', 1538642556121), --18
     (19, 2, 'Cats are good pets, for they are clean and are not noisy.', 1538642556169), --19
     (19, 2, 'She did not cheat on the test, for it was not the right thing to do.', 1538642556193), --20
-    (19, 2, 'A song can make or ruin a person’s day if they let it get to them.', 1538642556030), --21
+    (19, 11, 'A song can make or ruin a person’s day if they let it get to them.', 1538642556030), --21
     (19, 2, 'We have a lot of rain in June.', 1538642556013), --22
     (20, 2, 'The sky is clear; the stars are twinkling.', 1538642556250), --23
-    (20, 2, 'Sixty-Four comes asking for bread.', 1538642556491), --24
+    (20, 12, 'Sixty-Four comes asking for bread.', 1538642556491), --24
     (20, 2, 'Wednesday is hump day, but has anyone asked the camel if he’s happy about it?', 1538642556385), --25
-    (21, 2, 'The memory we used to share is no longer coherent.', 1538642556333), --26
+    (21, 13, 'The memory we used to share is no longer coherent.', 1538642556333), --26
     (21, 2, 'I am counting my calories, yet I really want dessert.', 1538642556093), --27
-    (21, 2, 'I am happy to take your donation; any amount will be greatly appreciated.', 1538642556044), --28
+    (21, 13, 'I am happy to take your donation; any amount will be greatly appreciated.', 1538642556044), --28
     (21, 2, 'If Purple People Eaters are real… where do they find purple people to eat?', 1538642556321), --29
-    (21, 2, 'The waves were crashing on the shore; it was a lovely sight.', 1538642556452), --30
+    (21, 13, 'The waves were crashing on the shore; it was a lovely sight.', 1538642556452), --30
     (21, 2, 'My Mum tries to be cool by saying that she likes all the same things that I do.', 1538642555956), --31
-    (21, 2, 'Two seats were vacant.', 1538642556293), --32
+    (21, 13, 'Two seats were vacant.', 1538642556293), --32
     (21, 2, 'The book is in front of the table.', 1538642556209), --33
-    (21, 2, 'How was the math test?', 1538642556493), --34
+    (21, 13, 'How was the math test?', 1538642556493), --34
     (22, 2, 'They got there early, and they got really good seats.', 1538642556160), --35
-    (22, 2, 'The quick brown fox jumps over the lazy dog.', 1538642556265), --36
+    (22, 14, 'The quick brown fox jumps over the lazy dog.', 1538642556265), --36
     (22, 2, 'Joe made the sugar cookies; Susan decorated them.', 1538642556378), --37
-    (22, 2, 'Where do random thoughts come from?', 1538642556008), --38
+    (22, 14, 'Where do random thoughts come from?', 1538642556008), --38
     (22, 2, 'She folded her handkerchief neatly.', 1538642555997), --39
-    (22, 2, 'I will never be this young again. Ever. Oh damn… I just got older.', 1538642555955), --40
+    (22, 14, 'I will never be this young again. Ever. Oh damn… I just got older.', 1538642555955), --40
     (23, 2, 'A purple pig and a green donkey flew a kite in the middle of the night and ended up sunburnt.', 1538642556258), --41
-    (23, 2, 'Last Friday in three week’s time I saw a spotted striped blue worm shake hands with a legless lizard.', 1538642556348), --42
+    (23, 15, 'Last Friday in three week’s time I saw a spotted striped blue worm shake hands with a legless lizard.', 1538642556348), --42
     (23, 2, 'I am never at home on Sundays.', 1538642556141), --43
-    (23, 2, 'The river stole the gods.', 1538642556238), --44
+    (23, 15, 'The river stole the gods.', 1538642556238), --44
     (23, 2, 'Someone I know recently combined Maple Syrup & buttered Popcorn thinking it would taste like caramel popcorn. It didn’t and they don’t recommend anyone else do it either.', 1538642556181), --45
-    (23, 2, 'Please wait outside of the house.', 1538642556287), --46
+    (23, 15, 'Please wait outside of the house.', 1538642556287), --46
     (23, 2, 'If you like tuna and tomato sauce- try combining the two. It’s really not as bad as it sounds.', 1538642556351), --47
-    (24, 2, 'I was very proud of my nickname throughout high school but today- I couldn’t be any different to what my nickname was.', 1538642556063), --48
+    (24, 16, 'I was very proud of my nickname throughout high school but today- I couldn’t be any different to what my nickname was.', 1538642556063), --48
     (24, 2, 'Sometimes it is better to just walk away from things and go back to them later when you’re in a better frame of mind.', 1538642556074), --49
-    (24, 2, 'Check back tomorrow; I will see if the book has arrived.', 1538642556123), --50
+    (24, 16, 'Check back tomorrow; I will see if the book has arrived.', 1538642556123), --50
     (24, 2, 'She works two jobs to make ends meet; at least, that was her reason for not having time to join us.', 1538642556368), --51
-    (24, 2, 'What was the person thinking when they discovered cow’s milk was fine for human consumption… and why did they do it in the first place!?', 1538642556290), --52
+    (24, 16, 'What was the person thinking when they discovered cow’s milk was fine for human consumption… and why did they do it in the first place!?', 1538642556290), --52
     (24, 2, 'Italy is my favorite country; in fact, I plan to spend two weeks there next year.', 1538642556389), --53
-    (25, 2, 'I love eating toasted cheese and tuna sandwiches.', 1538642556444), --54
-    (26, 2, 'When I was little I had a car door slammed shut on my hand. I still remember it quite vividly.', 1538642556085), --55
+    (25, 17, 'I love eating toasted cheese and tuna sandwiches.', 1538642556444), --54
+    (26, 18, 'When I was little I had a car door slammed shut on my hand. I still remember it quite vividly.', 1538642556085), --55
     (26, 2, 'He ran out of money, so he had to stop playing poker.', 1538642556469), --56
-    (26, 2, 'She did her best to help him.', 1538642556221), --57
+    (26, 18, 'She did her best to help him.', 1538642556221), --57
     (26, 2, 'He said he was not there yesterday; however, many people saw him there.', 1538642556510), --58
-    (26, 2, 'Let me help you with your baggage.', 1538642556401), --59
+    (26, 18, 'Let me help you with your baggage.', 1538642556401), --59
     (26, 2, 'Christmas is coming.', 1538642556412), --60
-    (26, 2, 'There was no ice cream in the freezer, nor did they have money to go to the store.', 1538642556409), --61
+    (26, 18, 'There was no ice cream in the freezer, nor did they have money to go to the store.', 1538642556409), --61
     (26, 2, 'Lets all be unique together until we realise we are all the same.', 1538642556428), --62
-    (26, 2, 'I want to buy a onesie… but know it won’t suit me.', 1538642556464), --63
+    (26, 18, 'I want to buy a onesie… but know it won’t suit me.', 1538642556464), --63
     (26, 2, 'We need to rent a room for our party.', 1538642556208), --64
-    (27, 2, 'Sometimes, all you need to do is completely make an ass of yourself and laugh it off to realise that life isn’t so bad after all.', 1538642556465), --65
+    (27, 19, 'Sometimes, all you need to do is completely make an ass of yourself and laugh it off to realise that life isn’t so bad after all.', 1538642556465), --65
     (27, 2, 'Mary plays the piano.', 1538642556231), --66
-    (27, 2, 'I currently have 4 windows open up… and I don’t know why.', 1538642555985), --67
+    (27, 19, 'I currently have 4 windows open up… and I don’t know why.', 1538642555985), --67
     (27, 2, 'She always speaks to him in a loud voice.', 1538642556378), --68
-    (27, 2, 'I checked to make sure that he was still alive.', 1538642556115), --69
+    (27, 19, 'I checked to make sure that he was still alive.', 1538642556115), --69
     (27, 2, 'A glittering gem is not enough.', 1538642556456), --70
     (28, 2, 'She advised him to come back at once.', 1538642556449), --71
-    (29, 2, 'This is a Japanese doll.', 1538642556225), --72
+    (29, 21, 'This is a Japanese doll.', 1538642556225), --72
     (29, 2, 'Malls are great places to shop; I can find everything I need under one roof.', 1538642556099), --73
-    (29, 2, 'Tom got a small piece of pie.', 1538642556380), --74
+    (29, 21, 'Tom got a small piece of pie.', 1538642556380), --74
     (29, 2, 'I would have gotten the promotion, but my attendance wasn’t good enough.', 1538642556182), --75
-    (29, 2, 'She was too short to see over the fence.', 1538642556511), --76
+    (29, 21, 'She was too short to see over the fence.', 1538642556511), --76
     (29, 2, 'The shooter says goodbye to his love.', 1538642556102), --77
-    (30, 2, 'He told us a very exciting adventure story.', 1538642555999), --78
+    (30, 22, 'He told us a very exciting adventure story.', 1538642555999), --78
     (30, 2, 'The mysterious diary records the voice.', 1538642556317), --79
-    (30, 2, 'Wow, does that work?', 1538642556172), --80
+    (30, 22, 'Wow, does that work?', 1538642556172), --80
     (30, 2, 'Should we start class now, or should we wait for everyone to get here?', 1538642556258), --81
     (30, 2, 'The clock within this blog and the clock on my laptop are 1 hour different from each other.', 1538642556196), --82
-    (30, 2, 'The body may perhaps compensates for the loss of a true metaphysics.', 1538642556197), --83
+    (30, 22, 'The body may perhaps compensates for the loss of a true metaphysics.', 1538642556197), --83
     (31, 2, 'We have never been to Asia, nor have we visited Africa.', 1538642556391), --84
-    (31, 2, 'The lake is a long way from here.', 1538642556480), --85
+    (31, 23, 'The lake is a long way from here.', 1538642556480), --85
     (31, 2, 'The old apple revels in its authority.', 1538642556019), --86
-    (31, 2, 'Writing a list of random sentences is harder than I initially thought it would be.', 1538642556065), --87
-    (33, 2, 'I often see the time 11:11 or 12:34 on clocks.', 1538642555997), --88
+    (31, 23, 'Writing a list of random sentences is harder than I initially thought it would be.', 1538642556065), --87
+    (33, 25, 'I often see the time 11:11 or 12:34 on clocks.', 1538642555997), --88
     (33, 2, 'If I don’t like something, I’ll stay away from it.', 1538642556298), --89
-    (33, 2, 'The waves were crashing on the shore; it was a lovely sight.', 1538642556342), --90
+    (33, 25, 'The waves were crashing on the shore; it was a lovely sight.', 1538642556342), --90
     (33, 2, 'The lake is a long way from here.', 1538642556094), --91
-    (33, 2, 'The body may perhaps compensates for the loss of a true metaphysics.', 1538642555986), --92
+    (33, 25, 'The body may perhaps compensates for the loss of a true metaphysics.', 1538642555986), --92
     (33, 2, 'I want more detailed information.', 1538642556243), --93
-    (33, 2, 'There were white out conditions in the town; subsequently, the roads were impassable.', 1538642556406), --94
+    (33, 25, 'There were white out conditions in the town; subsequently, the roads were impassable.', 1538642556406), --94
     (33, 2, 'When I was little I had a car door slammed shut on my hand. I still remember it quite vividly.', 1538642556500), --95
-    (33, 2, 'Check back tomorrow; I will see if the book has arrived.', 1538642556004), --96
+    (33, 25, 'Check back tomorrow; I will see if the book has arrived.', 1538642556004), --96
     (33, 2, 'The mysterious diary records the voice.', 1538642556154), --97
-    (34, 2, 'What was the person thinking when they discovered cow’s milk was fine for human consumption… and why did they do it in the first place!?', 1538642556095), --98
+    (34, 26, 'What was the person thinking when they discovered cow’s milk was fine for human consumption… and why did they do it in the first place!?', 1538642556095), --98
     (34, 2, 'She folded her handkerchief neatly.', 1538642556411), --99
-    (34, 2, 'She did her best to help him.', 1538642556126), --100
+    (34, 26, 'She did her best to help him.', 1538642556126), --100
     (34, 2, 'Is it free?', 1538642556022), --101
-    (34, 2, 'She only paints with bold colors; she does not like pastels.', 1538642556216), --102
+    (34, 26, 'She only paints with bold colors; she does not like pastels.', 1538642556216), --102
     (34, 2, 'He ran out of money, so he had to stop playing poker.', 1538642556080), --103
-    (34, 2, 'I was very proud of my nickname throughout high school but today- I couldn’t be any different to what my nickname was.', 1538642556135), --104
+    (34, 26, 'I was very proud of my nickname throughout high school but today- I couldn’t be any different to what my nickname was.', 1538642556135), --104
     (35, 2, 'This is the last random sentence I will be writing and I am going to stop mid-sent', 1538642556437), --105
-    (35, 2, 'I really want to go to work, but I am too sick to drive.', 1538642556125), --106
+    (35, 27, 'I really want to go to work, but I am too sick to drive.', 1538642556125), --106
     (35, 2, 'Sometimes, all you need to do is completely make an ass of yourself and laugh it off to realise that life isn’t so bad after all.', 1538642556037), --107
-    (35, 2, 'Wednesday is hump day, but has anyone asked the camel if he’s happy about it?', 1538642556191), --108
+    (35, 27, 'Wednesday is hump day, but has anyone asked the camel if he’s happy about it?', 1538642556191), --108
     (35, 2, 'They got there early, and they got really good seats.', 1538642555988), --109
-    (35, 2, 'A song can make or ruin a person’s day if they let it get to them.', 1538642556242), --110
+    (35, 27, 'A song can make or ruin a person’s day if they let it get to them.', 1538642556242), --110
     (36, 2, 'He didn’t want to go to the dentist, yet he went anyway.', 1538642556414), --111
-    (36, 2, 'Christmas is coming.', 1538642556387), --112
+    (36, 28, 'Christmas is coming.', 1538642556387), --112
     (36, 2, 'Last Friday in three week’s time I saw a spotted striped blue worm shake hands with a legless lizard.', 1538642556464), --113
-    (36, 2, 'I currently have 4 windows open up… and I don’t know why.', 1538642556039), --114
+    (36, 28, 'I currently have 4 windows open up… and I don’t know why.', 1538642556039), --114
     (36, 2, 'There was no ice cream in the freezer, nor did they have money to go to the store.', 1538642556089), --115
-    (36, 2, 'The book is in front of the table.', 1538642556003), --116
+    (36, 28, 'The book is in front of the table.', 1538642556003), --116
     (36, 2, 'I love eating toasted cheese and tuna sandwiches.', 1538642556067), --117
-    (36, 2, 'My Mum tries to be cool by saying that she likes all the same things that I do.', 1538642556155), --118
+    (36, 28, 'My Mum tries to be cool by saying that she likes all the same things that I do.', 1538642556155), --118
     (36, 2, 'I want to buy a onesie… but know it won’t suit me.', 1538642556175), --119
-    (36, 2, 'She advised him to come back at once.', 1538642556168), --120
-    (39, 2, 'Rock music approaches at high velocity.', 1538642556309), --121
+    (36, 28, 'She advised him to come back at once.', 1538642556168), --120
+    (39, 31, 'Rock music approaches at high velocity.', 1538642556309), --121
     (39, 2, 'He told us a very exciting adventure story.', 1538642556037), --122
-    (39, 2, 'I checked to make sure that he was still alive.', 1538642556453), --123
+    (39, 31, 'I checked to make sure that he was still alive.', 1538642556453), --123
     (39, 2, 'I am never at home on Sundays.', 1538642556337), --124
-    (39, 2, 'I think I will buy the red car, or I will lease the blue one.', 1538642556257), --125
-    (40, 2, 'Please wait outside of the house.', 1538642556465), --126
+    (39, 31, 'I think I will buy the red car, or I will lease the blue one.', 1538642556257), --125
+    (40, 32, 'Please wait outside of the house.', 1538642556465), --126
     (40, 2, 'Joe made the sugar cookies; Susan decorated them.', 1538642556081), --127
-    (41, 2, 'Sixty-Four comes asking for bread.', 1538642556171), --128
-    (42, 2, 'A glittering gem is not enough.', 1538642556296), --129
+    (41, 33, 'Sixty-Four comes asking for bread.', 1538642556171), --128
+    (42, 34, 'A glittering gem is not enough.', 1538642556296), --129
     (42, 2, 'Let me help you with your baggage.', 1538642556076), --130
-    (42, 2, 'I would have gotten the promotion, but my attendance wasn’t good enough.', 1538642556054), --131
+    (42, 34, 'I would have gotten the promotion, but my attendance wasn’t good enough.', 1538642556054), --131
     (42, 2, 'How was the math test?', 1538642556025), --132
-    (42, 2, 'She was too short to see over the fence.', 1538642556013), --133
+    (42, 34, 'She was too short to see over the fence.', 1538642556013), --133
     (42, 2, 'A purple pig and a green donkey flew a kite in the middle of the night and ended up sunburnt.', 1538642556251), --134
     (43, 2, 'Hurry!', 1538642556287), --135
     (44, 2, 'I will never be this young again. Ever. Oh damn… I just got older.', 1538642556385), --136
-    (44, 2, 'Tom got a small piece of pie.', 1538642556101), --137
+    (44, 36, 'Tom got a small piece of pie.', 1538642556101), --137
     (44, 2, 'The river stole the gods.', 1538642556008), --138
-    (44, 2, 'I hear that Nancy is very pretty.', 1538642556109), --139
+    (44, 36, 'I hear that Nancy is very pretty.', 1538642556109), --139
     (44, 2, 'It was getting dark, and we weren’t there yet.', 1538642556429), --140
-    (44, 2, 'Abstraction is often one floor above you.', 1538642556084), --141
+    (44, 36, 'Abstraction is often one floor above you.', 1538642556084), --141
     (44, 2, 'Cats are good pets, for they are clean and are not noisy.', 1538642556172), --142
-    (44, 2, 'She always speaks to him in a loud voice.', 1538642556255), --143
+    (44, 36, 'She always speaks to him in a loud voice.', 1538642556255), --143
     (44, 2, 'The stranger officiates the meal.', 1538642556451), --144
-    (44, 2, 'Mary plays the piano.', 1538642556489), --145
+    (44, 36, 'Mary plays the piano.', 1538642556489), --145
     (45, 2, 'The clock within this blog and the clock on my laptop are 1 hour different from each other.', 1538642556050), --146
-    (45, 2, 'We have never been to Asia, nor have we visited Africa.', 1538642556281), --147
+    (45, 37, 'We have never been to Asia, nor have we visited Africa.', 1538642556281), --147
     (45, 2, 'I am happy to take your donation; any amount will be greatly appreciated.', 1538642556069), --148
-    (45, 2, 'Wow, does that work?', 1538642555969), --149
+    (45, 37, 'Wow, does that work?', 1538642555969), --149
     (45, 2, 'If Purple People Eaters are real… where do they find purple people to eat?', 1538642556157), --150
-    (46, 2, 'We need to rent a room for our party.', 1538642556270), --151
+    (46, 38, 'We need to rent a room for our party.', 1538642556270), --151
     (46, 2, 'Two seats were vacant.', 1538642556001), --152
-    (46, 2, 'The old apple revels in its authority.', 1538642556333), --153
+    (46, 38, 'The old apple revels in its authority.', 1538642556333), --153
     (47, 2, 'Everyone was busy, so I went to the movie alone.', 1538642556075), --154
-    (47, 2, 'This is a Japanese doll.', 1538642556060), --155
+    (47, 39, 'This is a Japanese doll.', 1538642556060), --155
     (47, 2, 'She works two jobs to make ends meet; at least, that was her reason for not having time to join us.', 1538642556345), --156
-    (47, 2, 'The memory we used to share is no longer coherent.', 1538642556150), --157
+    (47, 39, 'The memory we used to share is no longer coherent.', 1538642556150), --157
     (47, 2, 'Lets all be unique together until we realise we are all the same.', 1538642556302), --158
-    (47, 2, 'Italy is my favorite country; in fact, I plan to spend two weeks there next year.', 1538642556237), --159
+    (47, 39, 'Italy is my favorite country; in fact, I plan to spend two weeks there next year.', 1538642556237), --159
     (48, 2, 'Sometimes it is better to just walk away from things and go back to them later when you’re in a better frame of mind.', 1538642556100), --160
-    (48, 2, 'Someone I know recently combined Maple Syrup & buttered Popcorn thinking it would taste like caramel popcorn. It didn’t and they don’t recommend anyone else do it either.', 1538642556204), --161
+    (48, 40, 'Someone I know recently combined Maple Syrup & buttered Popcorn thinking it would taste like caramel popcorn. It didn’t and they don’t recommend anyone else do it either.', 1538642556204), --161
     (48, 2, 'Where do random thoughts come from?', 1538642556435), --162
-    (48, 2, 'The shooter says goodbye to his love.', 1538642555950), --163
+    (48, 40, 'The shooter says goodbye to his love.', 1538642555950), --163
     (49, 2, 'The quick brown fox jumps over the lazy dog.', 1538642556418), --164
-    (49, 2, 'Should we start class now, or should we wait for everyone to get here?', 1538642556320), --165
+    (49, 41, 'Should we start class now, or should we wait for everyone to get here?', 1538642556320), --165
     (49, 2, 'We have a lot of rain in June.', 1538642556320), --166
-    (49, 2, 'Writing a list of random sentences is harder than I initially thought it would be.', 1538642556099), --167
+    (49, 41, 'Writing a list of random sentences is harder than I initially thought it would be.', 1538642556099), --167
     (49, 2, 'If the Easter Bunny and the Tooth Fairy had babies would they take your teeth and leave chocolate for you?', 1538642556140), --168
-    (49, 2, 'Malls are great places to shop; I can find everything I need under one roof.', 1538642556218), --169
+    (49, 41, 'Malls are great places to shop; I can find everything I need under one roof.', 1538642556218), --169
     (49, 2, 'If you like tuna and tomato sauce- try combining the two. It’s really not as bad as it sounds.', 1538642556191), --170
-    (49, 2, 'He turned in the research paper on Friday; otherwise, he would have not passed the class.', 1538642556349), --171
+    (49, 41, 'He turned in the research paper on Friday; otherwise, he would have not passed the class.', 1538642556349), --171
     (49, 2, 'He said he was not there yesterday; however, many people saw him there.', 1538642556330), --172
-    (49, 2, 'I am counting my calories, yet I really want dessert.', 1538642556395), --173
+    (49, 41, 'I am counting my calories, yet I really want dessert.', 1538642556395), --173
     (50, 2, 'She did not cheat on the test, for it was not the right thing to do.', 1538642556064), --174
-    (50, 2, 'The sky is clear; the stars are twinkling.', 1538642556316), --175
+    (50, 42, 'The sky is clear; the stars are twinkling.', 1538642556316), --175
     (50, 2, 'I really want to go to work, but I am too sick to drive.', 1538642556212), --176
-    (50, 2, 'He told us a very exciting adventure story.', 1538642555947), --177
+    (50, 42, 'He told us a very exciting adventure story.', 1538642555947), --177
     (50, 2, 'We have never been to Asia, nor have we visited Africa.', 1538642556046), --178
-    (50, 2, 'The lake is a long way from here.', 1538642556493), --179
+    (50, 42, 'The lake is a long way from here.', 1538642556493), --179
     (50, 2, 'I often see the time 11:11 or 12:34 on clocks.', 1538642556049), --180
-    (50, 2, 'The old apple revels in its authority.', 1538642556289), --181
+    (50, 42, 'The old apple revels in its authority.', 1538642556289), --181
     (51, 2, 'He said he was not there yesterday; however, many people saw him there.', 1538642556316), --182
-    (51, 2, 'Christmas is coming.', 1538642556160), --183
+    (51, 43, 'Christmas is coming.', 1538642556160), --183
     (51, 2, 'Wednesday is hump day, but has anyone asked the camel if he’s happy about it?', 1538642556180), --184
-    (51, 2, 'I love eating toasted cheese and tuna sandwiches.', 1538642556301), --185
+    (51, 43, 'I love eating toasted cheese and tuna sandwiches.', 1538642556301), --185
     (51, 2, 'Where do random thoughts come from?', 1538642556280), --186
-    (51, 2, 'Wow, does that work?', 1538642556324), --187
+    (51, 43, 'Wow, does that work?', 1538642556324), --187
     (51, 2, 'I hear that Nancy is very pretty.', 1538642556275), --188
-    (52, 2, 'Abstraction is often one floor above you.', 1538642556355), --189
+    (52, 44, 'Abstraction is often one floor above you.', 1538642556355), --189
     (52, 2, 'There were white out conditions in the town; subsequently, the roads were impassable.', 1538642556170), --190
-    (52, 2, 'I am counting my calories, yet I really want dessert.', 1538642556304), --191
+    (52, 44, 'I am counting my calories, yet I really want dessert.', 1538642556304), --191
     (52, 2, 'The sky is clear; the stars are twinkling.', 1538642556169), --192
-    (52, 2, 'I want to buy a onesie… but know it won’t suit me.', 1538642556313), --193
+    (52, 44, 'I want to buy a onesie… but know it won’t suit me.', 1538642556313), --193
     (53, 2, 'The clock within this blog and the clock on my laptop are 1 hour different from each other.', 1538642556320), --194
-    (53, 2, 'Writing a list of random sentences is harder than I initially thought it would be.', 1538642556071), --195
+    (53, 45, 'Writing a list of random sentences is harder than I initially thought it would be.', 1538642556071), --195
     (54, 2, 'This is the last random sentence I will be writing and I am going to stop mid-sent', 1538642555972), --196
-    (54, 2, 'If I don’t like something, I’ll stay away from it.', 1538642556445), --197
+    (54, 46, 'If I don’t like something, I’ll stay away from it.', 1538642556445), --197
     (54, 2, 'The body may perhaps compensates for the loss of a true metaphysics.', 1538642556035), --198
-    (54, 2, 'There was no ice cream in the freezer, nor did they have money to go to the store.', 1538642556260), --199
+    (54, 46, 'There was no ice cream in the freezer, nor did they have money to go to the store.', 1538642556260), --199
     (54, 2, 'The river stole the gods.', 1538642556079), --200
-    (55, 2, 'They got there early, and they got really good seats.', 1538642556117), --201
+    (55, 47, 'They got there early, and they got really good seats.', 1538642556117), --201
     (55, 2, 'We have a lot of rain in June.', 1538642556136), --202
-    (56, 2, 'He ran out of money, so he had to stop playing poker.', 1538642556207), --203
-    (57, 2, 'The waves were crashing on the shore; it was a lovely sight.', 1538642556121), --204
+    (56, 48, 'He ran out of money, so he had to stop playing poker.', 1538642556207), --203
+    (57, 49, 'The waves were crashing on the shore; it was a lovely sight.', 1538642556121), --204
     (57, 2, 'A song can make or ruin a person’s day if they let it get to them.', 1538642556244), --205
     (57, 2, 'Joe made the sugar cookies; Susan decorated them.', 1538642556290), --206
-    (57, 2, 'Tom got a small piece of pie.', 1538642556176), --207
+    (57, 49, 'Tom got a small piece of pie.', 1538642556176), --207
     (58, 2, 'The shooter says goodbye to his love.', 1538642556366), --208
-    (58, 2, 'He didn’t want to go to the dentist, yet he went anyway.', 1538642555949), --209
-    (59, 2, 'Sometimes, all you need to do is completely make an ass of yourself and laugh it off to realise that life isn’t so bad after all.', 1538642556190), --210
-    (60, 2, 'She works two jobs to make ends meet; at least, that was her reason for not having time to join us.', 1538642556092), --211
-    (60, 2, 'Everyone was busy, so I went to the movie alone.', 1538642556090), --212
+    (58, 50, 'He didn’t want to go to the dentist, yet he went anyway.', 1538642555949), --209
+    (59, 51, 'Sometimes, all you need to do is completely make an ass of yourself and laugh it off to realise that life isn’t so bad after all.', 1538642556190), --210
+    (60, 52, 'She works two jobs to make ends meet; at least, that was her reason for not having time to join us.', 1538642556092), --211
+    (60, 52, 'Everyone was busy, so I went to the movie alone.', 1538642556090), --212
     (60, 2, 'My Mum tries to be cool by saying that she likes all the same things that I do.', 1538642556350), --213
-    (60, 2, 'Hurry!', 1538642556414), --214
+    (60, 52, 'Hurry!', 1538642556414), --214
     (61, 2, 'She folded her handkerchief neatly.', 1538642556260), --215
-    (61, 2, 'She advised him to come back at once.', 1538642556179), --216
+    (61, 53, 'She advised him to come back at once.', 1538642556179), --216
     (61, 2, 'A glittering gem is not enough.', 1538642556111), --217
     (61, 2, 'Malls are great places to shop; I can find everything I need under one roof.', 1538642556500), --218
     (62, 2, 'If the Easter Bunny and the Tooth Fairy had babies would they take your teeth and leave chocolate for you?', 1538642556305), --219
-    (62, 2, 'She only paints with bold colors; she does not like pastels.', 1538642556495), --220
+    (62, 54, 'She only paints with bold colors; she does not like pastels.', 1538642556495), --220
     (63, 2, 'Last Friday in three week’s time I saw a spotted striped blue worm shake hands with a legless lizard.', 1538642556017), --221
-    (63, 2, 'Let me help you with your baggage.', 1538642556411), --222
+    (63, 55, 'Let me help you with your baggage.', 1538642556411), --222
     (63, 2, 'It was getting dark, and we weren’t there yet.', 1538642556289), --223
     (64, 2, 'Two seats were vacant.', 1538642556228), --224
-    (64, 2, 'She was too short to see over the fence.', 1538642555955), --225
-    (64, 2, 'I will never be this young again. Ever. Oh damn… I just got older.', 1538642556339), --226
+    (64, 56, 'She was too short to see over the fence.', 1538642555955), --225
+    (64, 56, 'I will never be this young again. Ever. Oh damn… I just got older.', 1538642556339), --226
     (64, 2, 'She did not cheat on the test, for it was not the right thing to do.', 1538642556091), --227
     (64, 2, 'Sometimes it is better to just walk away from things and go back to them later when you’re in a better frame of mind.', 1538642555946), --228
-    (64, 2, 'What was the person thinking when they discovered cow’s milk was fine for human consumption… and why did they do it in the first place!?', 1538642556383), --229
+    (64, 56, 'What was the person thinking when they discovered cow’s milk was fine for human consumption… and why did they do it in the first place!?', 1538642556383), --229
     (64, 2, 'I think I will buy the red car, or I will lease the blue one.', 1538642556060), --230
-    (64, 2, 'The stranger officiates the meal.', 1538642556409), --231
-    (64, 2, 'When I was little I had a car door slammed shut on my hand. I still remember it quite vividly.', 1538642556396), --232
+    (64, 56, 'The stranger officiates the meal.', 1538642556409), --231
+    (64, 56, 'When I was little I had a car door slammed shut on my hand. I still remember it quite vividly.', 1538642556396), --232
     (64, 2, 'I would have gotten the promotion, but my attendance wasn’t good enough.', 1538642556042), --233
     (65, 2, 'We need to rent a room for our party.', 1538642556217), --234
-    (65, 2, 'If you like tuna and tomato sauce- try combining the two. It’s really not as bad as it sounds.', 1538642555994), --235
-    (65, 2, 'The memory we used to share is no longer coherent.', 1538642556306), --236
+    (65, 57, 'If you like tuna and tomato sauce- try combining the two. It’s really not as bad as it sounds.', 1538642555994), --235
+    (65, 57, 'The memory we used to share is no longer coherent.', 1538642556306), --236
     (65, 2, 'Cats are good pets, for they are clean and are not noisy.', 1538642556504), --237
-    (65, 2, 'He turned in the research paper on Friday; otherwise, he would have not passed the class.', 1538642556194), --238
+    (65, 57, 'He turned in the research paper on Friday; otherwise, he would have not passed the class.', 1538642556194), --238
     (67, 2, 'Sixty-Four comes asking for bread.', 1538642556076), --239
-    (67, 2, 'Rock music approaches at high velocity.', 1538642556027), --240
+    (67, 59, 'Rock music approaches at high velocity.', 1538642556027), --240
     (67, 2, 'I checked to make sure that he was still alive.', 1538642556160), --241
     (67, 2, 'I was very proud of my nickname throughout high school but today- I couldn’t be any different to what my nickname was.', 1538642556166), --242
     (67, 2, 'I am happy to take your donation; any amount will be greatly appreciated.', 1538642556003), --243
-    (67, 2, 'I currently have 4 windows open up… and I don’t know why.', 1538642556371), --244
-    (67, 2, 'She always speaks to him in a loud voice.', 1538642556194), --245
+    (67, 59, 'I currently have 4 windows open up… and I don’t know why.', 1538642556371), --244
+    (67, 59, 'She always speaks to him in a loud voice.', 1538642556194), --245
     (68, 2, 'Is it free?', 1538642556040), --246
-    (68, 2, 'Should we start class now, or should we wait for everyone to get here?', 1538642556133), --247
+    (68, 60, 'Should we start class now, or should we wait for everyone to get here?', 1538642556133), --247
     (68, 2, 'Someone I know recently combined Maple Syrup & buttered Popcorn thinking it would taste like caramel popcorn. It didn’t and they don’t recommend anyone else do it either.', 1538642556290), --248
-    (68, 2, 'Mary plays the piano.', 1538642556066), --249
+    (68, 60, 'Mary plays the piano.', 1538642556066), --249
     (68, 2, 'The book is in front of the table.', 1538642556233), --250
-    (68, 2, 'A purple pig and a green donkey flew a kite in the middle of the night and ended up sunburnt.', 1538642556495), --251
+    (68, 60, 'A purple pig and a green donkey flew a kite in the middle of the night and ended up sunburnt.', 1538642556495), --251
     (68, 2, 'How was the math test?', 1538642556212), --252
-    (68, 2, 'I am never at home on Sundays.', 1538642556386), --253
-    (69, 2, 'She did her best to help him.', 1538642556098), --254
+    (68, 60, 'I am never at home on Sundays.', 1538642556386), --253
+    (69, 61, 'She did her best to help him.', 1538642556098), --254
     (69, 2, 'If Purple People Eaters are real… where do they find purple people to eat?', 1538642556158), --255
-    (70, 2, 'Italy is my favorite country; in fact, I plan to spend two weeks there next year.', 1538642556148), --256
+    (70, 62, 'Italy is my favorite country; in fact, I plan to spend two weeks there next year.', 1538642556148), --256
     (71, 2, 'The mysterious diary records the voice.', 1538642556491), --257
-    (71, 2, 'I want more detailed information.', 1538642556462), --258
+    (71, 63, 'I want more detailed information.', 1538642556462), --258
     (71, 2, 'Lets all be unique together until we realise we are all the same.', 1538642556353), --259
-    (71, 2, 'Please wait outside of the house.', 1538642556263), --260
+    (71, 63, 'Please wait outside of the house.', 1538642556263), --260
     (71, 2, 'This is a Japanese doll.', 1538642556170), --261
-    (71, 2, 'Check back tomorrow; I will see if the book has arrived.', 1538642556042), --262
+    (71, 63, 'Check back tomorrow; I will see if the book has arrived.', 1538642556042), --262
     (71, 2, 'The quick brown fox jumps over the lazy dog.', 1538642556428), --263
-    (71, 2, 'The river stole the gods.', 1538642556177), --264
+    (71, 63, 'The river stole the gods.', 1538642556177), --264
     (71, 2, 'The mysterious diary records the voice.', 1538642555998), --265
-    (71, 2, 'There was no ice cream in the freezer, nor did they have money to go to the store.', 1538642556166), --266
+    (71, 63, 'There was no ice cream in the freezer, nor did they have money to go to the store.', 1538642556166), --266
     (72, 2, 'He ran out of money, so he had to stop playing poker.', 1538642556035), --267
-    (72, 2, 'She did not cheat on the test, for it was not the right thing to do.', 1538642556370), --268
+    (72, 64, 'She did not cheat on the test, for it was not the right thing to do.', 1538642556370), --268
     (73, 2, 'Please wait outside of the house.', 1538642556227), --269
-    (74, 2, 'Christmas is coming.', 1538642556384), --270
+    (74, 66, 'Christmas is coming.', 1538642556384), --270
     (75, 2, 'Two seats were vacant.', 1538642556490), --271
-    (75, 2, 'He turned in the research paper on Friday; otherwise, he would have not passed the class.', 1538642556079), --272
+    (75, 67, 'He turned in the research paper on Friday; otherwise, he would have not passed the class.', 1538642556079), --272
     (75, 2, 'The lake is a long way from here.', 1538642556221), --273
     (76, 2, 'Everyone was busy, so I went to the movie alone.', 1538642556177); --274
-
-
-
-
-
-
-

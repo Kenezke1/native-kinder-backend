@@ -21,12 +21,6 @@ public class ConnectionServiceImpl implements ConnectionService {
     @Autowired
     UserRepository userRepository;
 
-
-    @Override
-    public List<Connection> findAllMatches(Integer userId) {
-        return connectionRepository.findAllMatch(userId);
-    }
-
     @Override
     public StatusDto vote(Integer voterId, Integer votedId, Status status) {
         List<User> connections = userRepository.findMatches(voterId);
