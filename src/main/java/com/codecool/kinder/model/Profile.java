@@ -1,6 +1,8 @@
 package com.codecool.kinder.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -13,6 +15,7 @@ public class Profile extends AbstractDomain {
     @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     @JsonIgnore
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
     @Enumerated(EnumType.STRING)
     private Gender gender;
@@ -22,6 +25,7 @@ public class Profile extends AbstractDomain {
     private Integer ageLimitMin;
     private Integer ageLimitMax;
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "profile")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private List<Image> images = new ArrayList<>();
 
     public Profile() {}
