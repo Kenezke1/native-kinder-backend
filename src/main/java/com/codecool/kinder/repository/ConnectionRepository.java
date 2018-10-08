@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ConnectionRepository extends JpaRepository<Connection, Integer> {
 
@@ -22,4 +23,8 @@ public interface ConnectionRepository extends JpaRepository<Connection, Integer>
             "WHERE conn1.status = 'RIGHT' AND conn2.status = 'RIGHT' " +
             "AND (conn1.user_from = ?1 OR conn1.user_to = ?1);",nativeQuery = true)
     List<Connection> findMyConnections(Integer userId);
+
+
+    @Override
+    Optional<Connection> findById(Integer integer);
 }
