@@ -1,6 +1,7 @@
-package com.codecool.kinder;
+package com.codecool.kinder.test.repository;
 
 
+import com.codecool.kinder.KinderApplication;
 import com.codecool.kinder.model.Connection;
 import com.codecool.kinder.model.Status;
 import com.codecool.kinder.model.User;

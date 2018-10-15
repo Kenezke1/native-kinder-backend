@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 
 @RestController
 @RequestMapping("/auth")
-class AuthContoller {
+public class AuthController {
 
     @Autowired
     private UserService userService;

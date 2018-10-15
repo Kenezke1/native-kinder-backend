@@ -7,10 +7,8 @@ import com.codecool.kinder.exceptions.UserNotFoundException;
 import com.codecool.kinder.model.Dto.MessageDto;
 import com.codecool.kinder.model.Message;
 import com.codecool.kinder.model.User;
-import com.codecool.kinder.repository.MessageRepository;
 import com.codecool.kinder.simple.MessageService;
 import com.codecool.kinder.simple.UserService;
-import jdk.jfr.ContentType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
