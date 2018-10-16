@@ -1,4 +1,4 @@
-package com.codecool.kinder.test.controller;
+package com.codecool.kinder;
 
 import com.codecool.kinder.contoller.AuthController;
 import com.codecool.kinder.model.User;
