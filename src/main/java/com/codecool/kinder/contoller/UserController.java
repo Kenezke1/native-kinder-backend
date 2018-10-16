@@ -5,7 +5,7 @@ import com.codecool.kinder.exceptions.ConnectionNotFoundException;
 import com.codecool.kinder.exceptions.ProfileNotFoundException;
 import com.codecool.kinder.exceptions.UserNotFoundException;
 import com.codecool.kinder.model.Dto.MessageDto;
-import com.codecool.kinder.model.User;
+import com.codecool.kinder.model.*;
 import com.codecool.kinder.simple.MessageService;
 import com.codecool.kinder.simple.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,7 +43,7 @@ public class UserController {
 
     @PostMapping("/messages")
     public Message sendMessage(@RequestBody String message,@RequestParam("sender") Integer sender,@RequestParam("connection") Integer connectionId) throws ConnectionNotFoundException, UserNotFoundException {
-        return this.messageService.sendMessage(message,sender,connectionId);
+        return messageService.sendMessage(message,sender,connectionId);
     }
 
     @DeleteMapping("")
