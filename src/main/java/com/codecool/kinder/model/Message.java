@@ -1,5 +1,8 @@
 package com.codecool.kinder.model;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 
 @Entity
@@ -7,9 +10,12 @@ import javax.persistence.*;
 public class Message extends AbstractDomain {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "sender")
+    @OnDelete(action = OnDeleteAction.CASCADE)
+
     private User sender;
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "connection_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Connection connection;
     private String message;
     @Column(name = "time_stamp")

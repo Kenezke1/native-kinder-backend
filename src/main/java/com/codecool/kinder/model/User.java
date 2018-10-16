@@ -3,6 +3,8 @@ package com.codecool.kinder.model;
 
 import com.codecool.kinder.model.AbstractDomain;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -10,6 +12,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "users")
+@OnDelete(action = OnDeleteAction.CASCADE)
 public class User extends AbstractDomain {
     private String email;
     private String givenName;
