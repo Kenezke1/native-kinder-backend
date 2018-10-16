@@ -48,7 +48,7 @@ public class MessageServiceImpl implements MessageService{
     }
 
     @Override
-    public Message sendMessage(Message message, Integer sender, Integer connectionId) throws ConnectionNotFoundException, UserNotFoundException {
+    public Message sendMessage(String message, Integer sender, Integer connectionId) throws ConnectionNotFoundException, UserNotFoundException {
         Optional<Connection> connection = this.connectionRepository.findById(connectionId);
         Optional<User> user = userRepository.findById(sender);
         if(!connection.isPresent()){
@@ -57,10 +57,12 @@ public class MessageServiceImpl implements MessageService{
         if(!user.isPresent()){
             throw new UserNotFoundException("User with this ID not present!");
         }
-        message.setConnection(connection.get());
-        message.setSender(user.get());
-        message.setTimestamp(new Date().getTime());
-        return messageRepository.saveAndFlush(message);
+        Message newMessage = Message.builder().build();
+        newMessage.setMessage(message);
+        newMessage.setConnection(connection.get());
+        newMessage.setSender(user.get());
+        newMessage.setTimestamp(new Date().getTime());
+        return messageRepository.saveAndFlush(newMessage);
     }
 
 

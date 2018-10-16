@@ -12,5 +12,5 @@ public interface MessageService {
     List<MessageDto> findAllMessageByUserId(Integer userId);
 
 
-    Message sendMessage(Message message, Integer sender, Integer connectionId) throws ConnectionNotFoundException, UserNotFoundException;
+    Message sendMessage(String message, Integer sender, Integer connectionId) throws ConnectionNotFoundException, UserNotFoundException;
 }

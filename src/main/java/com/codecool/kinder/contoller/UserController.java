@@ -42,7 +42,7 @@ public class UserController {
 
 
     @PostMapping("/messages")
-    public Message sendMessage(@RequestBody Message message,@RequestParam("sender") Integer sender,@RequestParam("connection") Integer connectionId) throws ConnectionNotFoundException, UserNotFoundException {
+    public Message sendMessage(@RequestBody String message,@RequestParam("sender") Integer sender,@RequestParam("connection") Integer connectionId) throws ConnectionNotFoundException, UserNotFoundException {
         return this.messageService.sendMessage(message,sender,connectionId);
     }
 
