@@ -4,13 +4,12 @@ package com.codecool.kinder.contoller;
 import com.codecool.kinder.exceptions.ProfileNotFoundException;
 import com.codecool.kinder.exceptions.UserNotFoundException;
 import com.codecool.kinder.model.Dto.MessageDto;
-import com.codecool.kinder.model.Message;
 import com.codecool.kinder.model.User;
-import com.codecool.kinder.repository.MessageRepository;
 import com.codecool.kinder.simple.MessageService;
 import com.codecool.kinder.simple.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -44,5 +43,11 @@ public class UserController {
     @DeleteMapping("")
     public void deleteUser(@RequestParam("userId") Integer userId) throws UserNotFoundException{
         userService.deleteById(userId);
+    }
+
+    @PostMapping(value = "/pic")
+    public MultipartFile picture(@RequestParam("file") MultipartFile mpf) {
+        System.out.println(mpf);
+        return mpf;
     }
 }

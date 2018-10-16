@@ -675,4 +675,20 @@ INSERT INTO messages (connection_id,sender,message,time_stamp) VALUES
     (75, 2, 'Two seats were vacant.', 1538642556490), --271
     (75, 67, 'He turned in the research paper on Friday; otherwise, he would have not passed the class.', 1538642556079), --272
     (75, 2, 'The lake is a long way from here.', 1538642556221), --273
-    (76, 2, 'Everyone was busy, so I went to the movie alone.', 1538642556177); --274
+    (76, 2, 'Everyone was busy, so I went to the movie alone.', 1538642556177), --274
+    (9, 5, 'Csá', 1538642555950), --275
+    (9, 2, 'Mizu', 1538642555960), --276
+    (9, 2, 'Semmi', 1538642555970), --277
+    (9, 5, 'Veled', 1538642555980), --278
+    (9, 5, 'Semmi', 1538642555990), --279
+    (9, 2, 'ASaskhakjlhgaskljghsakljhgkjwehjkwehtzlkwqwrwqfassgd', 1538642556000), --280
+    (9, 2, 'Qqtkjtlhj twe hwlkhwkj whklj wlkhz lkwhzl kwhzlkwehzw', 1538642556010), --281g
+    (9, 5, 'oksa', 1538642556020), --282
+    (9, 2, 'na', 1538642556030), --283
+    (9, 5, 'csá', 1538642556040), --284
+    (9, 2, 'mivan?', 1538642556050), --285
+    (9, 5, 'aha', 1538642556060), --286
+    (9, 5, 'ja', 1538642556070), --287
+    (9, 2, 'okker', 1538642556080), --288
+    (9, 2, 'na mentem cső', 1538642556090), --289
+    (9, 5, 'csá', 1538642557000); --290
