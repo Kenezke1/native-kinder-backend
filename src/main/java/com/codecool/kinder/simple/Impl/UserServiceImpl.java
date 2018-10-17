@@ -2,6 +2,7 @@ package com.codecool.kinder.simple.Impl;
 
 import com.codecool.kinder.exceptions.ProfileNotFoundException;
 import com.codecool.kinder.exceptions.UserNotFoundException;
+import com.codecool.kinder.model.Gender;
 import com.codecool.kinder.model.Profile;
 import com.codecool.kinder.model.User;
 import com.codecool.kinder.repository.ConnectionRepository;
@@ -23,6 +24,9 @@ import javax.transaction.Transactional;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 
@@ -37,6 +41,12 @@ public class UserServiceImpl implements UserService,GoogleService{
 
     @Autowired
     private ConnectionRepository connectionRepository;
+
+    private final String INPUT_PATTERN = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
+    private final String OUTPUT_PATTERN = "dd-MM-yyy";
+    private SimpleDateFormat dateFormat = new SimpleDateFormat(OUTPUT_PATTERN);
+    private String currentDate = dateFormat.format(new Date());
+
 
     @Override
     public User getByEmail(String email) throws UserNotFoundException {
@@ -120,7 +130,7 @@ public class UserServiceImpl implements UserService,GoogleService{
         notMatched.removeAll(findMatches(userId));
         for(User user : notMatched){
             Optional<Profile> profile = profileRepository.findByUserId(user.getId());
-            if(profile.isPresent() && myProfile.get().getTargetGender().equals(profile.get().getGender())){
+            if(isInCriteria(myProfile.get(),profile.get())){
                 result.add(user);
             }
         }
@@ -135,5 +145,30 @@ public class UserServiceImpl implements UserService,GoogleService{
         Optional<User> myself = userRepository.findById(userId);
         matches.remove(myself.get());
         return matches;
+    }
+
+    private boolean isInCriteria(Profile myProfile,Profile shouldFitCriteria){
+        if(isInRange(shouldFitCriteria.getBirthDate(),myProfile.getAgeLimitMin(),myProfile.getAgeLimitMax())) {
+            if (myProfile.getTargetGender().equals(shouldFitCriteria.getGender())) {
+                return true;
+            } else if (myProfile.getTargetGender().equals(Gender.BOTH)) {
+                return true;
+            }
+        }
+        return false;
+
+    }
+
+    private boolean isInRange(String birthDate, Integer ageLimitMin,Integer ageLimitMax) {
+        DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern(INPUT_PATTERN, Locale.ENGLISH);
+        DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern(OUTPUT_PATTERN, Locale.ENGLISH);
+        LocalDate date = LocalDate.parse(birthDate, inputFormatter);
+        String formattedBirthDate = outputFormatter.format(date);
+
+        Integer shouldFitCriteriaYear = Integer.parseInt(currentDate.split("-")[2]) - Integer.parseInt(formattedBirthDate.split("-")[2]);
+        if(shouldFitCriteriaYear >= ageLimitMin && shouldFitCriteriaYear <= ageLimitMax){
+            return true;
+        }
+        return false;
     }
 }
