@@ -166,7 +166,7 @@ public class UserServiceImpl implements UserService,GoogleService{
         String formattedBirthDate = outputFormatter.format(date);
 
         Integer shouldFitCriteriaYear = Integer.parseInt(currentDate.split("-")[2]) - Integer.parseInt(formattedBirthDate.split("-")[2]);
-        if(shouldFitCriteriaYear > ageLimitMin && shouldFitCriteriaYear < ageLimitMax){
+        if(shouldFitCriteriaYear >= ageLimitMin && shouldFitCriteriaYear <= ageLimitMax){
             return true;
         }
         return false;
