@@ -57,7 +57,7 @@ public class MessageServiceImpl implements MessageService{
         if(!user.isPresent()){
             throw new UserNotFoundException("User with this ID not present!");
         }
-        Message newMessage = Message.builder().build();
+        Message newMessage = new Message();
         newMessage.setMessage(message);
         newMessage.setConnection(connection.get());
         newMessage.setSender(user.get());
