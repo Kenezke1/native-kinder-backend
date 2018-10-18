@@ -46,7 +46,7 @@ class ProfileController {
     }
 
     @PutMapping("")
-    void UpdateProfile(@RequestBody Profile profile, @RequestParam Integer userId){
+    void UpdateProfile(@RequestBody Profile profile, @RequestParam("userId") Integer userId){
         profileService.updateProfile(profile, userId);
     }
 

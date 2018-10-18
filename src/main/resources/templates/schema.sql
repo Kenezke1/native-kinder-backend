@@ -22,8 +22,8 @@ CREATE TABLE profiles (
 	gender TEXT NOT NULL,
 	birth_date TEXT NOT NULL,
 	target_gender TEXT NOT NULL,
-	age_limit_min INTEGER DEFAULT 18,
-	age_limit_max INTEGER DEFAULT 30,
+	age_limit_min INTEGER NOT NULL,
+	age_limit_max INTEGER NOT NULL,
 	FOREIGN KEY (user_id) REFERENCES users(id),
 	CONSTRAINT gender_not_empty CHECK (gender <> ''),
 	CONSTRAINT birth_date_not_empty CHECK (birth_date <> '')

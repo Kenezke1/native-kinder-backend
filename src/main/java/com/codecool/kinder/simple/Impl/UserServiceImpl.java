@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
@@ -43,9 +44,7 @@ public class UserServiceImpl implements UserService,GoogleService{
     private ConnectionRepository connectionRepository;
 
     private final String INPUT_PATTERN = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
-    private final String OUTPUT_PATTERN = "dd-MM-yyy";
-    private SimpleDateFormat dateFormat = new SimpleDateFormat(OUTPUT_PATTERN);
-    private String currentDate = dateFormat.format(new Date());
+    private final LocalDate NOW = LocalDate.now();
 
 
     @Override
@@ -130,6 +129,9 @@ public class UserServiceImpl implements UserService,GoogleService{
         notMatched.removeAll(findMatches(userId));
         for(User user : notMatched){
             Optional<Profile> profile = profileRepository.findByUserId(user.getId());
+            if(!profile.isPresent()){
+                throw new ProfileNotFoundException("Profile not exists");
+            }
             if(isInCriteria(myProfile.get(),profile.get())){
                 result.add(user);
             }
@@ -161,11 +163,8 @@ public class UserServiceImpl implements UserService,GoogleService{
 
     private boolean isInRange(String birthDate, Integer ageLimitMin,Integer ageLimitMax) {
         DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern(INPUT_PATTERN, Locale.ENGLISH);
-        DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern(OUTPUT_PATTERN, Locale.ENGLISH);
         LocalDate date = LocalDate.parse(birthDate, inputFormatter);
-        String formattedBirthDate = outputFormatter.format(date);
-
-        Integer shouldFitCriteriaYear = Integer.parseInt(currentDate.split("-")[2]) - Integer.parseInt(formattedBirthDate.split("-")[2]);
+        Integer shouldFitCriteriaYear = Period.between(date,NOW).getYears();
         if(shouldFitCriteriaYear >= ageLimitMin && shouldFitCriteriaYear <= ageLimitMax){
             return true;
         }
